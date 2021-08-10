@@ -4,7 +4,7 @@
   absolute_url: true
 
 - title: Install and Run
-  icon: /assets/images/icons/documentation/icn-quickstart-color.svg
+  icon: /assets/images/icons/documentation/icn-deployment-color.svg
 
 - title: Get Started
   icon: /assets/images/icons/documentation/icn-quickstart-color.svg
@@ -32,7 +32,7 @@
   icon: /assets/images/icons/documentation/icn-deployment-color.svg
 
 - title: Configure
-  icon: /assets/images/icons/documentation/icn-quickstart-color.svg
+  icon: /assets/images/icons/konnect/konnect-settings.svg
 
 - title: Administer
   icon: /assets/images/icons/documentation/icn-admin-api-color.svg
