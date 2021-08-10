@@ -139,7 +139,7 @@
               url: /developer-portal/theme-customization/single-page-app
         - text: Helpers CLI
           url: /developer-portal/helpers/cli
-    - text: Plugin Development Guide
+    - text: Lua Plugin Development Guide
       url: /plugin-development
       items:
         - text: Introduction
@@ -171,6 +171,9 @@
 
         - text: (un)Installing your plugin
           url: /plugin-development/distribution
+
+    - text: Plugins in Other Languages
+      url: /develop/external-plugins
 
 - title: Reference
   icon: /assets/images/icons/documentation/icn-references-color.svg
