@@ -103,6 +103,7 @@
               url: /configure/auth/kong-manager/oidc
             - text: Sessions
               url: /configure/auth/kong-manager/sessions
+
         - text: Role-based Access Control (RBAC)
           url: /configure/auth/rbac
           items:
@@ -112,18 +113,9 @@
               url: /configure/auth/rbac/add-user
             - text: Add an Admin
               url: /configure/auth/rbac/add-admin
-
         - text: Mapping LDAP Service Directory Groups to Kong Roles
           url: /configure/auth/service-directory-mapping
 
-    - text: Configure Gateway Objects
-      items:
-        - text: Add a Service
-          url: /configure/add-service
-        - text: Enable a Plugin
-          url: /configure/enable-plugin
-        - text: Add a Consumer
-          url: /configure/add-consumer
     - text: Configure gRPC Plugins
       url: /configure/grpc
     - text: Logging Reference
