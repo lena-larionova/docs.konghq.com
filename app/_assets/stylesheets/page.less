@@ -840,7 +840,7 @@
       padding: 7px 0 15px 35px;
 
       &:last-child {
-        padding-bottom: 15px;
+        padding-bottom: 5px;
       }
 
       &:before {
@@ -1089,6 +1089,12 @@ Generic Styling for Desktop
         font-size: 17px;
         padding: 0 5px 0 0;
       }
+
+      &.no-icon {
+      &::before {
+        display: none;
+      }
+    }
     }
 
     ol, li {
@@ -1270,33 +1276,42 @@ Generic Styling for Desktop
       padding: 3px;
     }
 
-    p, b, strong {
+    b, strong {
       padding: 0;
       margin: 0;
       display: inline;
     }
 
-    &::before {
+    p {
+      margin-bottom: 0;
+      padding: 0;
+      display: block;
+    }
+
+    &:not(.no-icon)::before {
       content: "\f05a";
       font-family: "Font Awesome", FontAwesome;
       color: @blue-400;
-      display: inline-block;
+      display: inline;
       font-weight: 600;
       font-size: 17px;
-      padding: 0 5px ;
+      padding: 0 10px 0 0;
+      float: left;
     }
+
     &.warning {
       background-color: @red-100;
       border-left: solid 3px @red-500;
 
-      &::before {
+      &:not(.no-icon)::before {
         content: "\f057";
         font-family: "Font Awesome", FontAwesome;
         color: @red-500;
         display: inline-block;
         font-weight: 600;
         font-size: 17px;
-        padding: 0 5px 0 0;
+        padding: 0 10px 0 0;
+        float: left;
       }
     }
 
@@ -1304,45 +1319,57 @@ Generic Styling for Desktop
       background-color: @yellow-100;
       border-left: solid 3px @yellow-400;
 
-      &::before {
+      &:not(.no-icon)::before {
         content: "\f071";
         font-family: "Font Awesome", FontAwesome;
         color: @yellow-400;
         display: inline-block;
         font-weight: 600;
         font-size: 17px;
-        padding: 0 5px 0 0;
+        padding: 0 10px 0 0;
+        float: left;
       }
     }
 
-    &.info {
+    &.note {
       background-color: @blue-100;
       border: none;
       border-left: solid 3px @blue-400;
 
-      &::before {
+      &:not(.no-icon)::before {
         content: "\f05a";
         font-family: "Font Awesome", FontAwesome;
         color: @blue-400;
         display: inline-block;
         font-weight: bold;
         font-size: 17px;
-        padding: 0 5px 0 0;
+        padding: 0 10px 0 0;
+        float: left;
       }
     }
 
-    &.tip {
-      border-left: 3px solid @green-400;
-      background-color: @green-100;
+    &.install-banner {
+      background-color: @blue-100;
+      border: none;
 
-      &::before {
-        content: "\f058";
+      &:not(.no-icon)::before {
+        content: "\f019";
         font-family: "Font Awesome", FontAwesome;
-        color: @green-400;
+        color: @blue-600;
         display: inline-block;
-        font-weight: 600;
-        font-size: 17px;
-        padding: 0 5px 0 0;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 0 10px 0 0;
+        float: left;
+      }
+
+      > p {
+        margin-left: 25px;
+      }
+
+      .install-subtitle {
+        opacity: 0.7;
+        font-style: italic;
       }
     }
   }
@@ -1544,6 +1571,24 @@ Generic Styling for Desktop
       &:before {
         content: "DELETE";
         background-color: #e23b3b;
+      }
+    }
+
+    &.head {
+      border-color: #f28bc7;
+
+      &:before {
+        content: "HEAD";
+        background-color: #e32391;
+      }
+    }
+
+    &.options {
+      border-color: #9fe0d6;
+
+      &:before {
+        content: "OPTIONS";
+        background-color: #3fb4a2;
       }
     }
   }

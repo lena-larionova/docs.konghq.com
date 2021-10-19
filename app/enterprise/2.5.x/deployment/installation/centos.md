@@ -4,7 +4,6 @@ title: Install Kong Gateway on CentOS
 
 ## Introduction
 
-
 This guide walks through downloading, installing, and starting **{{site.ee_product_name}}** on **CentOS**.
 
 The configuration shown in this guide is intended as an example. Depending on your
@@ -150,7 +149,7 @@ root-equivalent access.
 
 ## Step 5. Seed the Super Admin password and bootstrap Kong Gateway
 
-{% include /md/{{page.kong_version}}/ee-kong-user.md %}
+{% include /md/{{page.kong_version}}/ee-kong-user.md kong_version=page.kong_version %}
 
 Setting a password for the **Super Admin** before initial start-up is strongly recommended. This will permit the use of RBAC (Role Based Access Control) at a later time, if needed.
 
