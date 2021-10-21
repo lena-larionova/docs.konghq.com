@@ -5,6 +5,18 @@
 
 - title: Install and Run
   icon: /assets/images/icons/documentation/icn-deployment-color.svg
+  url: /install/
+  items:
+    - text: Docker
+    - text: Kubernetes
+    - text: Helm
+    - text: OpenShift
+    - text: CentOS
+    - text: Ubuntu
+    - text: Amazon Linux
+    - text: RHEL
+    - text: Debian
+    - text: macOS
 
 - title: Get Started
   icon: /assets/images/icons/documentation/icn-quickstart-color.svg
