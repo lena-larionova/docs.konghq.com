@@ -1,4 +1,5 @@
 .DS_Store
+install
 .env
 .che
 .vagrant
