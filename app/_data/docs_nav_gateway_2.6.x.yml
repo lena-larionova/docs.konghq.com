@@ -3,8 +3,13 @@
   url: /gateway/
   absolute_url: true
 
-- title: Install and Run
+- title: Install
   icon: /assets/images/icons/documentation/icn-deployment-color.svg
+  items:
+    - text: Migrating from OSS to EE
+      url: /install/migrate-ce-to-ke
+    - text: Upgrade Guide
+      url: /install/upgrade
 
 - title: Get Started
   icon: /assets/images/icons/documentation/icn-quickstart-color.svg
