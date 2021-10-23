@@ -4,7 +4,8 @@ located in the app/gateway/{version}/install folder.
 
 ## Setup configs
 
-There are two sets of configurations you will need to update when installing and deploying {{site.base_gateway}}.
+There are two sets of configurations you will need to update when installing and deploying {{site.base_gateway}},
+the `kong.conf` file and either a database or a `kong.yml` declarative configuration file.
 
 {{site.base_gateway}} comes with a default configuration file that can be found at `/etc/kong/kong.conf.default`
 if you installed {{site.base_gateway}} with one of the official packages. 
