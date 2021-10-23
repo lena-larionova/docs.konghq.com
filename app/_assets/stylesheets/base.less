@@ -88,51 +88,6 @@ input[type="button"] {
   }
 }
 
-.button.button-dl,
-button.button-dl,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-  border-radius: 3px;
-  letter-spacing: 0;
-  font-weight: 600;
-  text-transform: none;
-  font-size: 13px;
-  color: #505659;
-  border-color: #d4d7d9;
-  background-color: linear-gradient(to top, #f7f9fa, #fcfcfc);
-  height: 36px;
-  line-height: 35px;
-  padding: 0 13px;
-  margin: 5px 5px 15px 5px;
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: @blue;
-    border-color: lighten(@blue, 40%);
-  }
-
-  &:hover {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .15), rgba(189, 230, 207, .15));
-  }
-
-  &:active {
-    background: #e8f8ee;
-  }
-
-  &:before {
-    content: '';
-    display: inline-block;
-    width: 16px;
-    height: 13px;
-    background-image: url('/assets/images/icons/icn-download.svg');
-    background-size: 16px;
-    background-repeat: no-repeat;
-    margin-right: 5px;
-  }
-}
-
 input[type="email"],
 input[type="number"],
 input[type="search"],
