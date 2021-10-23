@@ -38,9 +38,7 @@ CREATE USER kong; CREATE DATABASE kong OWNER kong;
 
 Then, run the {{site.base_gateway}} migrations, using the following command:
 
-```bash
-kong migrations bootstrap [-c /path/to/kong.conf]
-```
+<div class="copy-code-snippet"><pre><code>kong migrations bootstrap -c <div contenteditable="true">{PATH_TO_KONG.CONF_FILE}</div></code></pre></div>
 
 {:.note}
 > **Note:** Older versions of PostgreSQL use `ident` authentication by default, newer versions (PSQL 10+)
@@ -66,10 +64,8 @@ your declarative configuration file.
 
 Set the `database` option to `off` and the `declarative_config` option to the path of your `kong.yml` file as in the following example:
 
-```conf
-database = off
-declarative_config = /path/to/kong.yml
-```
+<div class="copy-code-snippet"><pre><code>database = off
+declarative_config = <div contenteditable="true">{PATH_TO_KONG.CONF_FILE}</div></code></pre></div>
 
 ## Seed Super Admin
 {:.badge .enterprise}
