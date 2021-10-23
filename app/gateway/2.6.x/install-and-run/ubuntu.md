@@ -75,7 +75,7 @@ curl -Lo kong-enterprise-edition_{{page.kong_versions[1].ee-version}}_all.deb"{{
 {% navtabs %}
 {% navtab Download Debian file for Xenial %}
 
-To download the Debian file for Xenial from the command line, use the following commands:
+To download the .deb file for Xenial from the command line, use the following commands:
 
 ```bash
 curl -Lo kong_{{page.kong_versions[1].ce-version}}_amd64.deb "{{ site.links.download }}/gateway-2.x-ubuntu-xenial/Packages/k/kong_{{page.kong_versions[1].ce-version}}_amd64.deb"
@@ -84,7 +84,7 @@ curl -Lo kong_{{page.kong_versions[1].ce-version}}_amd64.deb "{{ site.links.down
 {% endnavtab %}
 {% navtab Download Debian file for Focal %}
 
-To download the Debian file for Focal from the command line, use the following commands:
+To download the .deb file for Focal from the command line, use the following commands:
 
 ```bash
 curl -Lo kong_{{page.kong_versions[1].ce-version}}_amd64.deb "{{ site.links.download }}/gateway-2.x-ubuntu-focal/Packages/k/kong_{{page.kong_versions[1].ce-version}}_amd64.deb"
@@ -93,7 +93,7 @@ curl -Lo kong_{{page.kong_versions[1].ce-version}}_amd64.deb "{{ site.links.down
 {% endnavtab %}
 {% navtab Download Debian file for Bionic %}
 
-To download the Debian file for Focal from the command line, use the following commands:
+To download the .deb file for Focal from the command line, use the following commands:
 
 ```bash
 curl -Lo kong_{{page.kong_versions[1].ce-version}}_amd64.deb "{{ site.links.download }}/gateway-2.x-ubuntu-bionic/Packages/k/kong_{{page.kong_versions[1].ce-version}}_amd64.deb"
@@ -106,7 +106,7 @@ curl -Lo kong_{{page.kong_versions[1].ce-version}}_amd64.deb "{{ site.links.down
 
 ### Kong Gateway (Enterprise)
 
-To install the Debian file for Ubuntu from the command line, use the following command:
+To install the .deb file for Ubuntu from the command line, use the following command:
 
 ```bash
 sudo dpkg -i kong-enterprise-edition_{{page.kong_versions[1].ee-version}}_all.deb

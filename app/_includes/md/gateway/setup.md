@@ -4,26 +4,24 @@ located in the app/gateway/{version}/install folder.
 
 ## Setup configs
 
-There are two sets of configurations you will need to update when installing and deploying {{site.base_gateway}},
-the `kong.conf` file and either a database or a `kong.yml` declarative configuration file.
+{{site.base_gateway}} comes with a default configuration property file that can be found
+at `/etc/kong/kong.conf.default` if you installed {{site.base_gateway}} with one of the official packages.
+This configuration file is used for setting {{site.base_gateway}}’s configuration properties at startup.
 
-{{site.base_gateway}} comes with a default configuration file that can be found at `/etc/kong/kong.conf.default`
-if you installed {{site.base_gateway}} with one of the official packages. 
+{{site.base_gateway}} offers two options for storing the configuration properties for all of
+{{site.base_gateway}}'s configured entities, a database or a yaml declarative configuration file.
+Before starting {{site.base_gateway}} you must update the `kong.conf.default` configuration property file with a reference
+to your datastore. 
 
-To alter the default properties listed in the file and configure {{site.base_gateway}},
-make a copy of the file, rename it (for example `kong.conf`), and save it to the same location.
-This configuration file is used for setting {{site.base_gateway}}'s configuration properties at startup.
+To alter the default properties listed in the `kong.conf.default` file and configure {{site.base_gateway}},
+make a copy of the file, rename it (for example `kong.conf`), make your updates, and save it to the same location.
 
-See the [Configuration property Reference](/gateway/{{ include.kong_version }}/reference/property-reference/#datastore-section)
-for more information on the different configuration options and their defaults.
-
-Additionally, the configuration properties for all of {{site.base_gateway}}'s configured entities, such as routes and services
-to which {{site.base_gateway}} proxies, can either be stored in a database or a yaml declarative configuration file.
-In either case you must update the `kong.conf` configuration file to connect to the appropriate datastore.
+For more information on how to configure {{site.base_gateway}} to connect to your datastore, see the Datastore section of the
+[Configuration property Reference](/gateway/{{ include.kong_version }}/reference/property-reference/#datastore-section).
 
 ### Using a database
 
-You must configure {{site.base_gateway}} using the `kong.conf` configuration file so it can connect to your database.
+First, you must configure {{site.base_gateway}} using the `kong.conf` configuration file so it can connect to your database.
 
 For more information on how to configure {{site.base_gateway}} to connect to your database, see the Datastore section of the
 [Configuration property Reference](/gateway/{{ include.kong_version }}/reference/property-reference/#datastore-section).
@@ -90,7 +88,7 @@ Setting a password for the **Super Admin** before initial start-up is strongly r
   ```
   You should receive a `HTTP/1.1 200 OK` message.
 
-## Using a yaml declarative config file
+## Start Kong
 
 {% include_cached /md/gateway/root-user-note.md kong_version=page.kong_version %}
 
@@ -142,7 +140,6 @@ By default, {{site.kong_gateway}} listens on the following ports:
 
 5. Access Kong Manager on port `8002`.
 
-
 ## Enable Dev Portal
 {:.badge .enterprise}
 
@@ -176,7 +173,6 @@ By default, {{site.kong_gateway}} listens on the following ports:
 If you did not receive an `HTTP/1.1 200 OK` message or need assistance completing
 your setup, reach out to your Kong Support contact or go to the
 [Support Portal](https://support.konghq.com/support/s/).
-
 
 ## Next Steps
 
