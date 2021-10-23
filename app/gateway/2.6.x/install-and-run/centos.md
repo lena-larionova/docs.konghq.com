@@ -11,12 +11,12 @@ title: Install Kong Gateway on CentOS
 
 {:.install-banner}
 > Download the latest {{site.ee_product_name}} {{page.kong_version}} package for
-> [**CentOS 7**]({{ site.links.download }}/gateway-2.x-centos-7/Packages/k/kong-enterprise-edition-{{page.kong_versions[0].ee-version}}.el7.noarch.rpm){:.install-link} or
-> [**CentOS 8**]({{ site.links.download }}/gateway-2.x-centos-8/Packages/k/kong-enterprise-edition-{{page.kong_versions[0].ee-version}}.el8.noarch.rpm){:.install-link}
+> [**CentOS 7**]({{ site.links.download }}/gateway-2.x-centos-7/Packages/k/kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.el7.noarch.rpm){:.install-link} or
+> [**CentOS 8**]({{ site.links.download }}/gateway-2.x-centos-8/Packages/k/kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.el8.noarch.rpm){:.install-link}
 >
-> (latest {{site.ee_product_name}} {{page.kong_version}} version: {{page.kong_versions[0].ee-version}})
+> (latest {{site.ee_product_name}} {{page.kong_version}} version: {{page.kong_versions[1].ee-version}})
 > <br><br>
-> <span class="install-subtitle">View the list of all {{site.ee_product_name}} packages for
+> <span class="install-subtitle">View the list of all {{site.ee_product_name}} 2.x packages for
 > [**CentOS 7**]({{ site.links.download }}/gateway-2.x-centos-7/Packages/k/){:.install-listing-link} or
 > [**CentOS 8**]({{ site.links.download }}/gateway-2.x-centos-8/Packages/k/){:.install-listing-link} </span>
 
@@ -28,7 +28,7 @@ title: Install Kong Gateway on CentOS
 To download the RPM file for CentOS 7 from the command line, use the following command:
 
 ```bash
-curl -Lo kong-enterprise-edition-{{page.kong_versions[0].ee-version}}.el7.noarch.rpm $( rpm --eval "{{ site.links.download }}/gateway-2.x-centos-7/Packages/k/kong-enterprise-edition-{{page.kong_versions[0].ee-version}}.el7.noarch.rpm")
+curl -Lo kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.el7.noarch.rpm $( rpm --eval "{{ site.links.download }}/gateway-2.x-centos-7/Packages/k/kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.el7.noarch.rpm")
 ```
 
 {% endnavtab %}
@@ -51,7 +51,7 @@ curl $(rpm --eval "{{site.links.download}}/gateway-2.x-centos-7/config.repo") | 
 To download the RPM file for CentOS 8 from the command line, use the following command:
 
 ```bash
-curl -Lo kong-enterprise-edition-{{page.kong_versions[0].ee-version}}.el8.noarch.rpm $( rpm --eval "{{ site.links.download }}/gateway-2.x-centos-8/Packages/k/kong-enterprise-edition-{{page.kong_versions[0].ee-version}}.el8.noarch.rpm")
+curl -Lo kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.el8.noarch.rpm $( rpm --eval "{{ site.links.download }}/gateway-2.x-centos-8/Packages/k/kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.el8.noarch.rpm")
 ```
 
 {% endnavtab %}
@@ -74,12 +74,12 @@ curl $(rpm --eval "{{site.links.download}}/gateway-2.x-centos-8/config.repo") | 
 
 {:.install-banner}
 > Download the latest {{site.ce_product_name}} {{page.kong_version}} package for
-> [**CentOS 7**]({{ site.links.download }}/gateway-2.x-centos-7/Packages/k/kong-{{page.kong_versions[0].ce-version}}.el7.amd64.rpm){:.install-link} or
-> [**CentOS 8**]({{ site.links.download }}/gateway-2.x-centos-8/Packages/k/kong-{{page.kong_versions[0].ce-version}}.el8.amd64.rpm){:.install-link}
+> [**CentOS 7**]({{ site.links.download }}/gateway-2.x-centos-7/Packages/k/kong-{{page.kong_versions[1].ce-version}}.el7.amd64.rpm){:.install-link} or
+> [**CentOS 8**]({{ site.links.download }}/gateway-2.x-centos-8/Packages/k/kong-{{page.kong_versions[1].ce-version}}.el8.amd64.rpm){:.install-link}
 >
-> (latest {{site.ce_product_name}} {{page.kong_version}} version: {{page.kong_versions[0].ce-version}})
+> (latest {{site.ce_product_name}} {{page.kong_version}} version: {{page.kong_versions[1].ce-version}})
 > <br><br>
-> <span class="install-subtitle">View the list of all {{site.ce_product_name}} packages for
+> <span class="install-subtitle">View the list of all {{site.ce_product_name}} 2.x packages for
 > [**CentOS 7**]({{ site.links.download }}/gateway-2.x-centos-7/Packages/k/){:.install-listing-link} or
 > [**CentOS 8**]({{ site.links.download }}/gateway-2.x-centos-8/Packages/k/){:.install-listing-link} </span>
 
@@ -91,7 +91,7 @@ curl $(rpm --eval "{{site.links.download}}/gateway-2.x-centos-8/config.repo") | 
 To download the RPM file for CentOS 7 from the command line, use the following commands:
 
 ```bash
-curl -Lo kong-{{page.kong_versions[0].ce-version}}.el7.amd64.rpm $(rpm --eval "{{ site.links.download }}/gateway-2.x-centos-7/Packages/k/kong-{{page.kong_versions[0].ce-version}}.el7.amd64.rpm")
+curl -Lo kong-{{page.kong_versions[1].ce-version}}.el7.amd64.rpm $(rpm --eval "{{ site.links.download }}/gateway-2.x-centos-7/Packages/k/kong-{{page.kong_versions[1].ce-version}}.el7.amd64.rpm")
 ```
 
 {% endnavtab %}
@@ -114,7 +114,7 @@ curl $( "{{site.links.download}}/gateway-2.x-centos-7/config.repo") | sudo tee /
 To download the RPM file for CentOS 8 from the command line, use the following commands:
 
 ```bash
-curl -Lo kong-{{page.kong_versions[0].ce-version}}.el8.amd64.rpm $(rpm --eval "{{ site.links.download }}/gateway-2.x-centos-8/Packages/k/kong-{{page.kong_versions[0].ce-version}}.el8.amd64.rpm")
+curl -Lo kong-{{page.kong_versions[1].ce-version}}.el8.amd64.rpm $(rpm --eval "{{ site.links.download }}/gateway-2.x-centos-8/Packages/k/kong-{{page.kong_versions[1].ce-version}}.el8.amd64.rpm")
 ```
 
 {% endnavtab %}
@@ -141,7 +141,7 @@ curl $( "{{site.links.download}}/gateway-2.x-centos-8/config.repo") | sudo tee /
 To install the RPM file for CentOS 7 from the command line, use the following command:
 
 ```bash
-sudo yum install kong-enterprise-edition-{{page.kong_versions[0].ee-version}}.el7.noarch.rpm
+sudo yum install kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.el7.noarch.rpm
 ```
 
 {% endnavtab %}
@@ -164,7 +164,7 @@ sudo yum install -y kong-enterprise-edition
 To install the RPM file for CentOS 8 from the command line, use the following command:
 
 ```bash
-sudo yum install kong-enterprise-edition-{{page.kong_versions[0].ee-version}}.el8.noarch.rpm
+sudo yum install kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.el8.noarch.rpm
 ```
 
 {% endnavtab %}
@@ -189,7 +189,7 @@ sudo yum install -y kong-enterprise-edition
 To install the RPM file for CentOS 7 from the command line, use the following command:
 
 ```bash
-sudo yum install kong-{{page.kong_versions[0].ce-version}}.el7.amd64.rpm
+sudo yum install kong-{{page.kong_versions[1].ce-version}}.el7.amd64.rpm
 ```
 
 {% endnavtab %}
@@ -212,7 +212,7 @@ sudo yum install -y kong
 To install the RPM file for CentOS 8 from the command line, use the following command:
 
 ```bash
-sudo yum install kong-{{page.kong_versions[0].ce-version}}.el8.amd64.rpm
+sudo yum install kong-{{page.kong_versions[1].ce-version}}.el8.amd64.rpm
 ```
 
 {% endnavtab %}
