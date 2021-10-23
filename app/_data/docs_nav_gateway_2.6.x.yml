@@ -6,46 +6,44 @@
 - title: Install and Run
   icon: /assets/images/icons/documentation/icn-deployment-color.svg
   items:
-    - text: Overview
-      url: /install/overview
-    - text: Amazon-Linux
-      url: /install/amazon-linux
-    - text: CentOS
-      url: /install/centos
-    - text: RHEL
-      url: /install/rhel
-    - text: Ubuntu
-      url: /install/ubuntu
-    - text: Docker
-      url: /install/docker
-    - text: Kubernetes
-      url: /install/kubernetes
-    - text: Helm
-      url: /install/helm
-    - text: OpenShift
-      url: /install/openshift
+    - text: Migrating from OSS to EE
+      url: /install-and-run/migrate-ce-to-ke
+    - text: Upgrade Guide
+      url: /install-and-run/upgrade
 
 - title: Get Started
   icon: /assets/images/icons/documentation/icn-quickstart-color.svg
   items:
-    - text: Overview
-      url: /get-started/overview
-    - text: Prepare to Administer
-      url: /get-started/prepare
-    - text: Expose your Services
-      url: /get-started/expose-services
-    - text: Protect your Services
-      url: /get-started/protect-services
-    - text: Improve Performance
-      url: /get-started/improve-performance
-    - text: Secure Services
-      url: /get-started/secure-services
-    - text: Set Up Intelligent Load Balancing
-      url: /get-started/load-balancing
-    - text: Manage Administrative Teams
-      url: /get-started/manage-teams
-    - text: Publish, Locate, and Consume Services
-      url: /get-started/dev-portal
+    - text: Quickstart Guide
+      url: /get-started/quickstart
+      items:
+        - text: Configuring a Service
+          url: /get-started/quickstart/configuring-a-service
+        - text: Configuring a gRPC Service
+          url: /get-started/quickstart/configuring-a-grpc-service
+        - text: Enabling Plugins
+          url: /get-started/quickstart/enabling-plugins
+        - text: Adding Consumers
+          url: /get-started/quickstart/adding-consumers
+    - text: Comprehensive Guide
+      url: /get-started/comprehensive/overview
+      items:
+        - text: Prepare to Administer
+          url: /get-started/comprehensive/prepare
+        - text: Expose your Services
+          url: /get-started/comprehensive/expose-services
+        - text: Protect your Services
+          url: /get-started/comprehensive/protect-services
+        - text: Improve Performance
+          url: /get-started/comprehensive/improve-performance
+        - text: Secure Services
+          url: /get-started/comprehensive/secure-services
+        - text: Set Up Intelligent Load Balancing
+          url: /get-started/comprehensive/load-balancing
+        - text: Manage Administrative Teams
+          url: /get-started/comprehensive/manage-teams
+        - text: Publish, Locate, and Consume Services
+          url: /get-started/comprehensive/dev-portal
 
 - title: Plan and Deploy
   icon: /assets/images/icons/documentation/icn-deployment-color.svg
@@ -94,20 +92,53 @@
               url: /configure/auth/oidc-auth0
             - text: OpenID Connect with Cognito
               url: /configure/auth/oidc-cognito
+            - text: OIDC Authenticated Group Mapping
+              url: /configure/auth/oidc-mapping
             - text: OpenID Connect Plugin Reference
               url: /hub/kong-inc/openid-connect
               absolute_url: true
-        - text: Multiple Authentication Methods
+        - text: Allowing Multiple Authentication Methods
           url: /configure/auth/allowing-multiple-authentication-methods
+        - text: Auth for Kong Manager
+          url: /configure/auth/kong-manager
+          items:
+            - text: Create a Super Admin
+              url: /configure/auth/kong-manager/super-admin
+            - text: Configure Networking
+              url: /configure/auth/kong-manager/networking
+            - text: Configure Kong Manager to Send Email
+              url: /configure/auth/kong-manager/email
+            - text: Reset Passwords and RBAC Tokens
+              url: /configure/auth/kong-manager/reset-password/
+            - text: Configure Workspaces
+              url: /configure/auth/kong-manager/workspaces
+            - text: Basic Auth
+              url: /configure/auth/kong-manager/basic
+            - text: LDAP
+              url: /configure/auth/kong-manager/ldap
+            - text: OIDC
+              url: /configure/auth/kong-manager/oidc
+            - text: Sessions
+              url: /configure/auth/kong-manager/sessions
+
+        - text: Role-based Access Control (RBAC)
+          url: /configure/auth/rbac
+          items:
+            - text: Add a Role
+              url: /configure/auth/rbac/add-role
+            - text: Add a User
+              url: /configure/auth/rbac/add-user
+            - text: Add an Admin
+              url: /configure/auth/rbac/add-admin
+        - text: Mapping LDAP Service Directory Groups to Kong Roles
+          url: /configure/auth/service-directory-mapping
+
     - text: Configure gRPC Plugins
       url: /configure/grpc
     - text: Logging Reference
       url: /configure/logging
     - text: Network and Firewall
       url: /configure/network
-
-- title: Administer
-  icon: /assets/images/icons/documentation/icn-admin-api-color.svg
 
 - title: Monitor
   icon: /assets/images/icons/documentation/icn-vitals.svg
