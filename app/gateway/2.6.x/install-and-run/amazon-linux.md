@@ -1,5 +1,6 @@
 ---
 title: Install Kong Gateway on Amazon Linux
+version-index: 1
 ---
 
 ## Download
@@ -11,9 +12,9 @@ title: Install Kong Gateway on Amazon Linux
 
 {:.install-banner}
 > Download the latest {{site.ee_product_name}} {{page.kong_version}} package for
-> [**Amazon Linux**]({{site.links.download }}/gateway-2.x-amazonlinux-2/Packages/k/kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.amzn2.noarch.rpm){:.install-link} 
+> [**Amazon Linux**]({{site.links.download }}/gateway-2.x-amazonlinux-2/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.amzn2.noarch.rpm){:.install-link} 
 >
-> (latest {{site.ee_product_name}} {{page.kong_version}} version: {{page.kong_versions[1].ee-version}})
+> (latest {{site.ee_product_name}} {{page.kong_version}} version: {{page.kong_versions[page.version-index].ee-version}})
 > <br><br>
 > <span class="install-subtitle">View the list of all the {{site.ee_product_name}} 2.x packages for
 > [**Amazon Linux**]({{site.links.download }}/gateway-2.x-amazonlinux-2/Packages/k/){:.install-listing-link} </span>
@@ -24,7 +25,7 @@ title: Install Kong Gateway on Amazon Linux
 To download the RPM file from the command line, use the following command:
 
 ```bash
-curl -Lo kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.amzn2.noarch.rpm "{{ site.links.download }}/gateway-2.x-amazonlinux-2/Packages/k/kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.amzn2.noarch.rpm"
+curl -Lo kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.amzn2.noarch.rpm "{{ site.links.download }}/gateway-2.x-amazonlinux-2/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.amzn2.noarch.rpm"
 ```
 
 {% endnavtab %}
@@ -46,9 +47,9 @@ curl {{site.links.download}}/gateway-2.x-amazonlinux-2/config.repo | sudo tee /e
 
 {:.install-banner}
 > Download the latest {{site.ce_product_name}} {{page.kong_version}} package for
-> [**Amazon Linux**]({{ site.links.download }}/gateway-2.x-amazonlinux-2/Packages/k/kong-{{page.kong_versions[1].ce-version}}.aws.amd64.rpm){:.install-link}
+> [**Amazon Linux**]({{ site.links.download }}/gateway-2.x-amazonlinux-2/Packages/k/kong-{{page.kong_versions[page.version-index].ce-version}}.aws.amd64.rpm){:.install-link}
 >
-> (latest {{site.ce_product_name}} {{page.kong_version}} version: {{page.kong_versions[1].ce-version}})
+> (latest {{site.ce_product_name}} {{page.kong_version}} version: {{page.kong_versions[page.version-index].ce-version}})
 > <br><br>
 > <span class="install-subtitle">View the list of all {{site.ce_product_name}} 2.x packages for
 > [**Amazon Linux**]({{ site.links.download }}/gateway-2.x-amazonlinux-2/Packages/k/){:.install-listing-link} </span>
@@ -59,7 +60,7 @@ curl {{site.links.download}}/gateway-2.x-amazonlinux-2/config.repo | sudo tee /e
 To download the RPM file from the command line, use the following commands:
 
 ```bash
-curl -Lo kong-{{page.kong_versions[1].ce-version}}.aws.amd64.rpm "{{ site.links.download }}/gateway-2.x-amazonlinux-2/Packages/k/kong-{{page.kong_versions[1].ce-version}}.aws.amd64.rpm"
+curl -Lo kong-{{page.kong_versions[page.version-index].ce-version}}.aws.amd64.rpm "{{ site.links.download }}/gateway-2.x-amazonlinux-2/Packages/k/kong-{{page.kong_versions[page.version-index].ce-version}}.aws.amd64.rpm"
 ```
 {% endnavtab %}
 {% navtab Download Yum repo file %}
@@ -83,7 +84,7 @@ curl {{site.links.download}}/gateway-2.x-amazonlinux-2/config.repo | sudo tee /e
 To install the RPM file from the command line, use the following command:
 
 ```bash
-sudo yum install kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.amzn2.noarch.rpm
+sudo yum install kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.amzn2.noarch.rpm
 ```
 
 {% endnavtab %}
@@ -106,7 +107,7 @@ sudo yum install -y kong-enterprise-edition
 To install the RPM file from the command line, use the following command:
 
 ```bash
-sudo yum install kong-{{page.kong_versions[1].ce-version}}.aws.amd64.rpm
+sudo yum install kong-{{page.kong_versions[page.version-index].ce-version}}.aws.amd64.rpm
 ```
 
 {% endnavtab %}

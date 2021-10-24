@@ -1,5 +1,6 @@
 ---
 title: Install Kong Gateway on RHEL
+version-index: 1
 ---
 
 ## Download
@@ -11,10 +12,10 @@ title: Install Kong Gateway on RHEL
 
 {:.install-banner}
 > Download the latest {{site.ee_product_name}} {{page.kong_version}} package for
-> [**RHEL 7**]({{ site.links.download }}/gateway-2.x-rhel-7/Packages/k/kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.rhel7.noarch.rpm){:.install-link} or
-> [**RHEL 8**]({{ site.links.download }}/gateway-2.x-rhel-8/Packages/k/kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.rhel8.noarch.rpm){:.install-link}
+> [**RHEL 7**]({{ site.links.download }}/gateway-2.x-rhel-7/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.rhel7.noarch.rpm){:.install-link} or
+> [**RHEL 8**]({{ site.links.download }}/gateway-2.x-rhel-8/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.rhel8.noarch.rpm){:.install-link}
 >
->(latest {{site.ee_product_name}} {{page.kong_version}} version: {{page.kong_versions[1].ee-version}})
+>(latest {{site.ee_product_name}} {{page.kong_version}} version: {{page.kong_versions[page.version-index].ee-version}})
 > <br><br>
 > <span class="install-subtitle">View the list of all {{site.ee_product_name}} 2.x packages for
 > [**RHEL 7**]({{ site.links.download }}/gateway-2.x-rhel-7/Packages/k/){:.install-listing-link} or
@@ -28,7 +29,7 @@ title: Install Kong Gateway on RHEL
 To download the RPM file for RHEL 7 from the command line, use the following command:
 
 ```bash
-curl -Lo kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.rhel7.noarch.rpm $( rpm --eval "{{ site.links.download }}/gateway-2.x-rhel-7/Packages/k/kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.rhel7.noarch.rpm")
+curl -Lo kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.rhel7.noarch.rpm $( rpm --eval "{{ site.links.download }}/gateway-2.x-rhel-7/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.rhel7.noarch.rpm")
 ```
 
 {% endnavtab %}
@@ -51,7 +52,7 @@ curl $(rpm --eval "{{site.links.download}}/gateway-2.x-rhel-7/config.repo") | su
 To download the RPM file for RHEL 8 from the command line, use the following command:
 
 ```bash
-curl -Lo kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.rhel8.noarch.rpm $( rpm --eval "{{ site.links.download }}/gateway-2.x-rhel-8/Packages/k/kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.rhel8.noarch.rpm")
+curl -Lo kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.rhel8.noarch.rpm $( rpm --eval "{{ site.links.download }}/gateway-2.x-rhel-8/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.rhel8.noarch.rpm")
 ```
 
 {% endnavtab %}
@@ -74,10 +75,10 @@ curl $(rpm --eval "{{site.links.download}}/gateway-2.x-rhel-8/config.repo") | su
 
 {:.install-banner}
 > Download the latest {{site.ce_product_name}} {{page.kong_version}} package for
-> [**RHEL 7**]({{ site.links.download }}/gateway-2.x-rhel-7/Packages/k/kong-{{page.kong_versions[1].ce-version}}.rhel7.amd64.rpm){:.install-link} or
-> [**RHEL 8**]({{ site.links.download }}/gateway-2.x-rhel-8/Packages/k/kong-{{page.kong_versions[1].ce-version}}.rhel8.amd64.rpm){:.install-link}
+> [**RHEL 7**]({{ site.links.download }}/gateway-2.x-rhel-7/Packages/k/kong-{{page.kong_versions[page.version-index].ce-version}}.rhel7.amd64.rpm){:.install-link} or
+> [**RHEL 8**]({{ site.links.download }}/gateway-2.x-rhel-8/Packages/k/kong-{{page.kong_versions[page.version-index].ce-version}}.rhel8.amd64.rpm){:.install-link}
 >
-> (latest {{site.ce_product_name}} {{page.kong_version}} version: {{page.kong_versions[1].ce-version}})
+> (latest {{site.ce_product_name}} {{page.kong_version}} version: {{page.kong_versions[page.version-index].ce-version}})
 > <br><br>
 > <span class="install-subtitle">View the list of all {{site.ce_product_name}} 2.x packages for
 > [**RHEL 7**]({{ site.links.download }}/gateway-2.x-rhel-7/Packages/k/){:.install-listing-link} or
@@ -91,7 +92,7 @@ curl $(rpm --eval "{{site.links.download}}/gateway-2.x-rhel-8/config.repo") | su
 To download the RPM file for RHEL 7 from the command line, use the following commands:
 
 ```bash
-curl -Lo kong-{{page.kong_versions[1].ce-version}}.rhel7.amd64.rpm $(rpm --eval "{{ site.links.download }}/gateway-2.x-rhel-7/Packages/k/kong-{{page.kong_versions[1].ce-version}}.rhel7.amd64.rpm")
+curl -Lo kong-{{page.kong_versions[page.version-index].ce-version}}.rhel7.amd64.rpm $(rpm --eval "{{ site.links.download }}/gateway-2.x-rhel-7/Packages/k/kong-{{page.kong_versions[page.version-index].ce-version}}.rhel7.amd64.rpm")
 ```
 
 {% endnavtab %}
@@ -114,7 +115,7 @@ curl $( "{{site.links.download}}/gateway-2.x-rhel-7/config.repo") | sudo tee /et
 To download the RPM file for RHEL 8 from the command line, use the following commands:
 
 ```bash
-curl -Lo kong-{{page.kong_versions[1].ce-version}}.rhel8.amd64.rpm $(rpm --eval "{{ site.links.download }}/gateway-2.x-rhel-8/Packages/k/kong-{{page.kong_versions[1].ce-version}}.rhel8.amd64.rpm")
+curl -Lo kong-{{page.kong_versions[page.version-index].ce-version}}.rhel8.amd64.rpm $(rpm --eval "{{ site.links.download }}/gateway-2.x-rhel-8/Packages/k/kong-{{page.kong_versions[page.version-index].ce-version}}.rhel8.amd64.rpm")
 ```
 
 {% endnavtab %}
@@ -141,7 +142,7 @@ curl $( "{{site.links.download}}/gateway-2.x-rhel-8/config.repo") | sudo tee /et
 To install the RPM file for RHEL 7 from the command line, use the following command:
 
 ```bash
-sudo yum install kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.rhel7.noarch.rpm
+sudo yum install kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.rhel7.noarch.rpm
 ```
 
 {% endnavtab %}
@@ -164,7 +165,7 @@ sudo yum install -y kong-enterprise-edition
 To install the RPM file for RHEL 8 from the command line, use the following command:
 
 ```bash
-sudo yum install kong-enterprise-edition-{{page.kong_versions[1].ee-version}}.rhel8.noarch.rpm
+sudo yum install kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.rhel8.noarch.rpm
 ```
 
 {% endnavtab %}
@@ -189,7 +190,7 @@ sudo yum install -y kong-enterprise-edition
 To install the RPM file for RHEL 7 from the command line, use the following command:
 
 ```bash
-sudo yum install kong-{{page.kong_versions[1].ce-version}}.rhel7.amd64.rpm
+sudo yum install kong-{{page.kong_versions[page.version-index].ce-version}}.rhel7.amd64.rpm
 ```
 
 {% endnavtab %}
@@ -212,7 +213,7 @@ sudo yum install -y kong
 To install the RPM file for RHEL 8 from the command line, use the following command:
 
 ```bash
-sudo yum install kong-{{page.kong_versions[1].ce-version}}.rhel8.amd64.rpm
+sudo yum install kong-{{page.kong_versions[page.version-index].ce-version}}.rhel8.amd64.rpm
 ```
 
 {% endnavtab %}

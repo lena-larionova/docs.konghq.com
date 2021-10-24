@@ -1,5 +1,6 @@
 ---
 title: Install Kong Gateway on Ubuntu
+version-index: 1
 ---
 
 ## Download
@@ -11,11 +12,11 @@ title: Install Kong Gateway on Ubuntu
 
 {:.install-banner}
 > Download the latest {{site.ee_product_name}} {{page.kong_version}} package for Ubuntu
-> [**Xenial**]({{ site.links.download }}/gateway-2.x-ubuntu-xenial/pool/all/k/kong-enterprise-edition/kong-enterprise-edition_{{page.kong_versions[1].version}}_all.deb){:.install-link},
-> [**Focal**]({{ site.links.download }}/gateway-2.x-ubuntu-focal/pool/all/k/kong-enterprise-edition/kong-enterprise-edition_{{page.kong_versions[1].version}}_all.deb){:.install-link}, or
-> [**Bionic**]({{ site.links.download }}/gateway-2.x-ubuntu-bionic/pool/all/k/kong-enterprise-edition/kong-enterprise-edition_{{page.kong_versions[1].version}}_all.deb){:.install-link}
+> [**Xenial**]({{ site.links.download }}/gateway-2.x-ubuntu-xenial/pool/all/k/kong-enterprise-edition/kong-enterprise-edition_{{page.kong_versions[page.version-index].version}}_all.deb){:.install-link},
+> [**Focal**]({{ site.links.download }}/gateway-2.x-ubuntu-focal/pool/all/k/kong-enterprise-edition/kong-enterprise-edition_{{page.kong_versions[page.version-index].version}}_all.deb){:.install-link}, or
+> [**Bionic**]({{ site.links.download }}/gateway-2.x-ubuntu-bionic/pool/all/k/kong-enterprise-edition/kong-enterprise-edition_{{page.kong_versions[page.version-index].version}}_all.deb){:.install-link}
 >
->(latest {{site.ee_product_name}} {{page.kong_version}} version: {{page.kong_versions[1].ee-version}})
+>(latest {{site.ee_product_name}} {{page.kong_version}} version: {{page.kong_versions[page.version-index].ee-version}})
 > <br><br>
 > <span class="install-subtitle">View the list of all {{site.ee_product_name}} 2.x packages for
 > [**Xenial**]({{ site.links.download }}/gateway-2.x-ubuntu-xenial/pool/all/k/kong-enterprise-edition/){:.install-listing-link},
@@ -29,7 +30,7 @@ title: Install Kong Gateway on Ubuntu
 To download the .deb file for Xenial from the command line, use the following command:
 
 ```bash
-curl -Lo kong-enterprise-edition_{{page.kong_versions[1].ee-version}}_all.deb"{{ site.links.download }}/gateway-2.x-ubuntu-xenial/Packages/k/kong-enterprise-edition-{{page.kong_versions[1].ee-version}}_all.deb"
+curl -Lo kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb"{{ site.links.download }}/gateway-2.x-ubuntu-xenial/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}_all.deb"
 ```
 
 {% endnavtab %}
@@ -38,7 +39,7 @@ curl -Lo kong-enterprise-edition_{{page.kong_versions[1].ee-version}}_all.deb"{{
 To download the .deb file for Focal from the command line, use the following command:
 
 ```bash
-curl -Lo kong-enterprise-edition_{{page.kong_versions[1].ee-version}}_all.deb"{{ site.links.download }}/gateway-2.x-ubuntu-focal/Packages/k/kong-enterprise-edition-{{page.kong_versions[1].ee-version}}_all.deb"
+curl -Lo kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb"{{ site.links.download }}/gateway-2.x-ubuntu-focal/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}_all.deb"
 ```
 
 {% endnavtab %}
@@ -47,7 +48,7 @@ curl -Lo kong-enterprise-edition_{{page.kong_versions[1].ee-version}}_all.deb"{{
 To download the .deb file for Bionic from the command line, use the following command:
 
 ```bash
-curl -Lo kong-enterprise-edition_{{page.kong_versions[1].ee-version}}_all.deb"{{ site.links.download }}/gateway-2.x-ubuntu-bionic/Packages/k/kong-enterprise-edition-{{page.kong_versions[1].ee-version}}_all.deb"
+curl -Lo kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb"{{ site.links.download }}/gateway-2.x-ubuntu-bionic/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}_all.deb"
 ```
 
 {% endnavtab %}
@@ -60,11 +61,11 @@ curl -Lo kong-enterprise-edition_{{page.kong_versions[1].ee-version}}_all.deb"{{
 
 {:.install-banner}
 > Download the latest {{site.ce_product_name}} {{page.kong_version}} package for Ubuntu
-> [**Xenial**]({{ site.links.download }}/gateway-2.x-ubuntu-xenial/pool/all/k/kong/kong_{{page.kong_versions[1].ce-version}}_amd64.deb){:.install-link},
-> [**Focal**]({{ site.links.download }}/gateway-2.x-ubuntu-focal/pool/all/k/kong/kong_{{page.kong_versions[1].ce-version}}_amd64.deb){:.install-link}, or
-> [**Bionic**]({{ site.links.download }}/gateway-2.x-ubuntu-bionic/pool/all/k/kong/kong_{{page.kong_versions[1].ce-version}}_amd64.deb){:.install-link}
+> [**Xenial**]({{ site.links.download }}/gateway-2.x-ubuntu-xenial/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-link},
+> [**Focal**]({{ site.links.download }}/gateway-2.x-ubuntu-focal/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-link}, or
+> [**Bionic**]({{ site.links.download }}/gateway-2.x-ubuntu-bionic/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-link}
 >
->(latest {{site.ce_product_name}} {{page.kong_version}} version: {{page.kong_versions[1].ce-version}})
+>(latest {{site.ce_product_name}} {{page.kong_version}} version: {{page.kong_versions[page.version-index].ce-version}})
 > <br><br>
 > <span class="install-subtitle">View the list of all {{site.ee_product_name}} 2.x packages for
 > [**Xenial**]({{ site.links.download }}/gateway-2.x-ubuntu-xenial/pool/all/k/kong-enterprise-edition/){:.install-listing-link},
@@ -78,7 +79,7 @@ curl -Lo kong-enterprise-edition_{{page.kong_versions[1].ee-version}}_all.deb"{{
 To download the .deb file for Xenial from the command line, use the following commands:
 
 ```bash
-curl -Lo kong_{{page.kong_versions[1].ce-version}}_amd64.deb "{{ site.links.download }}/gateway-2.x-ubuntu-xenial/Packages/k/kong_{{page.kong_versions[1].ce-version}}_amd64.deb"
+curl -Lo kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb "{{ site.links.download }}/gateway-2.x-ubuntu-xenial/Packages/k/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb"
 ```
 
 {% endnavtab %}
@@ -87,7 +88,7 @@ curl -Lo kong_{{page.kong_versions[1].ce-version}}_amd64.deb "{{ site.links.down
 To download the .deb file for Focal from the command line, use the following commands:
 
 ```bash
-curl -Lo kong_{{page.kong_versions[1].ce-version}}_amd64.deb "{{ site.links.download }}/gateway-2.x-ubuntu-focal/Packages/k/kong_{{page.kong_versions[1].ce-version}}_amd64.deb"
+curl -Lo kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb "{{ site.links.download }}/gateway-2.x-ubuntu-focal/Packages/k/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb"
 ```
 
 {% endnavtab %}
@@ -96,7 +97,7 @@ curl -Lo kong_{{page.kong_versions[1].ce-version}}_amd64.deb "{{ site.links.down
 To download the .deb file for Focal from the command line, use the following commands:
 
 ```bash
-curl -Lo kong_{{page.kong_versions[1].ce-version}}_amd64.deb "{{ site.links.download }}/gateway-2.x-ubuntu-bionic/Packages/k/kong_{{page.kong_versions[1].ce-version}}_amd64.deb"
+curl -Lo kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb "{{ site.links.download }}/gateway-2.x-ubuntu-bionic/Packages/k/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb"
 ```
 
 {% endnavtab %}
@@ -109,7 +110,7 @@ curl -Lo kong_{{page.kong_versions[1].ce-version}}_amd64.deb "{{ site.links.down
 To install the .deb file for Ubuntu from the command line, use the following command:
 
 ```bash
-sudo dpkg -i kong-enterprise-edition_{{page.kong_versions[1].ee-version}}_all.deb
+sudo dpkg -i kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb
 ```
 
 ### Kong Gateway
@@ -117,7 +118,7 @@ sudo dpkg -i kong-enterprise-edition_{{page.kong_versions[1].ee-version}}_all.de
 To install the Debian file for Ubuntu from the command line, use the following command:
 
 ```bash
-sudo dpkg -i kong_{{page.kong_versions[1].ce-version}}_amd64.deb
+sudo dpkg -i kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb
 ```
 
 <!-- Setup content shared between all Linux installation topics: Amazon Linux, CentOS, Ubuntu, and RHEL.
