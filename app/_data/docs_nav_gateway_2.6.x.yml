@@ -5,9 +5,8 @@
 
 - title: Install and Run
   icon: /assets/images/icons/documentation/icn-deployment-color.svg
+  url: /install-and-run/
   items:
-    - text: Overview
-      url: /install-and-run/overview
     - text: Amazon Linux
       url: /install-and-run/amazon-linux
     - text: CentOS

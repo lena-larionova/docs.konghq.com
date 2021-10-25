@@ -1,8 +1,8 @@
-<!-- Shared between all Linux installation topics, including Amazon Linux, CentOS, Ubuntu, and RHEL, 
+<!-- Shared between all Linux installation topics, including Amazon Linux, CentOS, Ubuntu, and RHEL,
 located in the app/gateway/{version}/install folder.
 -->
 
-## Setup configs
+## Set up configs
 
 {{site.base_gateway}} comes with a default configuration property file that can be found
 at `/etc/kong/kong.conf.default` if you installed {{site.base_gateway}} with one of the official packages.
@@ -11,7 +11,7 @@ This configuration file is used for setting {{site.base_gateway}}’s configurat
 {{site.base_gateway}} offers two options for storing the configuration properties for all of
 {{site.base_gateway}}'s configured entities, a database or a yaml declarative configuration file.
 Before starting {{site.base_gateway}} you must update the `kong.conf.default` configuration property file with a reference
-to your datastore. 
+to your datastore.
 
 To alter the default properties listed in the `kong.conf.default` file and configure {{site.base_gateway}},
 make a copy of the file, rename it (for example `kong.conf`), make your updates, and save it to the same location.
@@ -88,7 +88,7 @@ Setting a password for the **Super Admin** before initial start-up is strongly r
 
   You should receive a `HTTP/1.1 200 OK` message.
 
-## Start Kong
+## Start Kong Gateway
 
 {% include_cached /md/gateway/root-user-note.md kong_version=page.kong_version %}
 
@@ -110,7 +110,9 @@ By default, {{site.kong_gateway}} listens on the following ports:
 - `:8001`: Port on which the Admin API used to configure {{site.kong_gateway}} listens.
 - `:8444`: Port on which the Admin API listens for HTTPS traffic.
 
+## Post-install configuration
 ### Enable and configure Kong Manager
+{:.badge .free}
 
 1. To access {{site.base_gateway}}'s graphical user interface (GUI), Kong Manager, update the `admin_gui_url` property
    in the `kong.conf` configuration file to the DNS, or IP address, of your system. For example:
@@ -120,7 +122,7 @@ By default, {{site.kong_gateway}} listens on the following ports:
     This setting needs to resolve to a network path that will reach the operating system (OS) host.
 
 2. Update the Admin API setting in the `kong.conf` file to listen on the needed network interfaces on the OS host.
-   A setting of `0.0.0.0:8001` will listen on port `8001` on all available network interfaces. 
+   A setting of `0.0.0.0:8001` will listen on port `8001` on all available network interfaces.
 
     Example configuration:
 
@@ -135,12 +137,12 @@ By default, {{site.kong_gateway}} listens on the following ports:
     ```
 
 3. Restart {{site.base_gateway}} for the setting to take effect, using the following command:
-    
+
     <div class="copy-code-snippet"><pre><code>kong restart -c <div contenteditable="true">{PATH_TO_KONG.CONF_FILE}</div></code></pre></div>
 
 5. Access Kong Manager on port `8002`.
 
-## Enable Dev Portal
+### Enable Dev Portal
 {:.badge .enterprise}
 
 1. [Deploy a license](/gateway/{{include.kong_version}}/plan-and-deploy/licenses/deploy-license).
