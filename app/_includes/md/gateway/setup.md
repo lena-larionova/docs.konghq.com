@@ -83,9 +83,9 @@ Setting a password for the **Super Admin** before initial start-up is strongly r
     <div class="copy-code-snippet"><pre><code>kong start -c <div contenteditable="true">{PATH_TO_KONG.CONF_FILE}</div></code></pre></div>
 
 3. Verify {{site.base_gateway}} is working:
-  ```bash
-  $ curl -i -X GET --url http://localhost:8001/services
-  ```
+
+  <div class="copy-code-snippet"><pre><code>curl -i -X GET --url http://<div contenteditable="true">{DNS_OR_IP}</div>:8001/services</code></pre></div>
+
   You should receive a `HTTP/1.1 200 OK` message.
 
 ## Start Kong
@@ -159,7 +159,7 @@ By default, {{site.kong_gateway}} listens on the following ports:
 4. To enable the Dev Portal for a workspace. Execute the following command,
    updating `DNSorIP` to reflect the IP or valid DNS for the OS system:
 
-    <div class="copy-code-snippet"><pre><code>url -X PATCH http://<div contenteditable="true">{DNS_OR_IP}</div>:8001/workspaces/default \
+    <div class="copy-code-snippet"><pre><code>curl -X PATCH http://<div contenteditable="true">{DNS_OR_IP}</div>:8001/workspaces/default \
     --data "config.portal=true"</code></pre></div>
 
 5. Access the Dev Portal for the default workspace using the following URL,
