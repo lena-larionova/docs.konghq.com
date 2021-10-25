@@ -1,6 +1,5 @@
 ---
 title: Install Kong Gateway on RHEL
-version-index: 1
 ---
 
 ## Download

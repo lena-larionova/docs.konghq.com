@@ -1,6 +1,5 @@
 ---
 title: Install Kong Gateway on Amazon Linux
-version-index: 1
 ---
 
 ## Download

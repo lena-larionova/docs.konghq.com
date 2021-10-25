@@ -1,6 +1,5 @@
 ---
 title: Install Kong Gateway on CentOS
-version-index: 1
 ---
 
 ## Download
