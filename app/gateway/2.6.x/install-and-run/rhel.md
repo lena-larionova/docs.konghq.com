@@ -17,13 +17,22 @@ title: Install Kong Gateway on RHEL
 > (latest version: {{page.kong_versions[page.version-index].ce-version}})
 >
 > <br>
-> <span class="install-subtitle">View the list of all {{site.ee_product_name}} 2.x packages for
+> <span class="install-subtitle">View the list of all 2.x packages for
 > [**RHEL 7**]({{ site.links.download }}/gateway-2.x-rhel-7/Packages/k/){:.install-listing-link} or
 > [**RHEL 8**]({{ site.links.download }}/gateway-2.x-rhel-8/Packages/k/){:.install-listing-link}<span>
+
+## Prerequisites
+
+You have a supported system with root or [root-equivalent](/gateway/{{page.kong_version}}/plan-and-deploy/kong-user) access.
+
 
 ## Download
 
 Choose between RHEL versions 7 and 8.
+
+You can download an RPM file with the specific version, or pull the whole catalog of versions as a Yum repo.
+
+If you already downloaded the packages manually, move on to [Install](#install).
 
 ### RHEL 7
 
@@ -108,12 +117,12 @@ To install the RPM file for RHEL 7, use the following command:
 
 ```bash
 ## Kong Gateway
-sudo yum install kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.rhel7.noarch.rpm
+sudo yum install -y kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.rhel7.noarch.rpm
 ```
 
 ```bash
 ## Kong Gateway (OSS)
-sudo yum install kong-{{page.kong_versions[page.version-index].ce-version}}.rhel7.amd64.rpm
+sudo yum --nogpgcheck install -y kong-{{page.kong_versions[page.version-index].ce-version}}.rhel7.amd64.rpm
 ```
 
 {% endnavtab %}
@@ -128,7 +137,7 @@ sudo yum install -y kong-enterprise-edition
 
 ```bash
 ## Kong Gateway (OSS)
-sudo yum install -y kong
+sudo yum --nogpgcheck install -y kong
 ```
 
 {% endnavtab %}
@@ -143,12 +152,12 @@ To install the RPM file for RHEL 8 from the command line, use the following comm
 
 ```bash
 ## Kong Gateway
-sudo yum install kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.rhel8.noarch.rpm
+sudo yum install -y kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.rhel8.noarch.rpm
 ```
 
 ```bash
 ## Kong Gateway (OSS)
-sudo yum install kong-{{page.kong_versions[page.version-index].ce-version}}.rhel8.amd64.rpm
+sudo yum --nogpgcheck install -y kong-{{page.kong_versions[page.version-index].ce-version}}.rhel8.amd64.rpm
 ```
 
 {% endnavtab %}
@@ -163,7 +172,7 @@ sudo yum install -y kong-enterprise-edition
 
 ```bash
 ## Kong Gateway (OSS)
-sudo yum install -y kong
+sudo yum --nogpgcheck install -y kong
 ```
 
 {% endnavtab %}

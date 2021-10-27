@@ -2,6 +2,10 @@
 title: Install Kong Gateway on Ubuntu
 ---
 
+## Prerequisites
+
+You have a supported system with root or [root-equivalent](/gateway/{{page.kong_version}}/plan-and-deploy/kong-user) access.
+
 ## Download
 
 ### Kong Gateway (Enterprise)
@@ -109,7 +113,7 @@ curl -Lo kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb "{
 To install the .deb file for Ubuntu from the command line, use the following command:
 
 ```bash
-sudo dpkg -i kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb
+sudo apt-get install -fy ./kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb
 ```
 
 ### Kong Gateway
@@ -117,7 +121,7 @@ sudo dpkg -i kong-enterprise-edition_{{page.kong_versions[page.version-index].ee
 To install the Debian file for Ubuntu from the command line, use the following command:
 
 ```bash
-sudo dpkg -i kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb
+sudo apt-get install -fy ./kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb
 ```
 
 <!-- Setup content shared between all Linux installation topics: Amazon Linux, CentOS, Ubuntu, and RHEL.

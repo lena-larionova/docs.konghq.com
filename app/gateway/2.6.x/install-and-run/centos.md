@@ -11,26 +11,34 @@ title: Install Kong Gateway on CentOS
 > [**CentOS 7**]({{ site.links.download }}/gateway-2.x-centos-7/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.el7.noarch.rpm){:.install-link} or
 > [**CentOS 8**]({{ site.links.download }}/gateway-2.x-centos-8/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.el8.noarch.rpm){:.install-link}
 > (latest version: {{page.kong_versions[page.version-index].ee-version}})
-> * **Kong Gateway**:
+> * **Kong Gateway (OSS)**:
 > [**CentOS 7**]({{ site.links.download }}/gateway-2.x-centos-7/Packages/k/kong-{{page.kong_versions[page.version-index].ce-version}}.el7.amd64.rpm){:.install-link} or
 > [**CentOS 8**]({{ site.links.download }}/gateway-2.x-centos-8/Packages/k/kong-{{page.kong_versions[page.version-index].ce-version}}.el8.amd64.rpm){:.install-link}
 > (latest version: {{page.kong_versions[page.version-index].ce-version}})
-> 
+>
 > <br>
 > <span class="install-subtitle">View the list of all 2.x packages for
 > [**CentOS 7**]({{ site.links.download }}/gateway-2.x-centos-7/Packages/k/){:.install-listing-link} or
 > [**CentOS 8**]({{ site.links.download }}/gateway-2.x-centos-8/Packages/k/){:.install-listing-link} </span>
 
+## Prerequisites
+
+You have a supported system with root or [root-equivalent](/gateway/{{page.kong_version}}/plan-and-deploy/kong-user) access.
+
 ## Download
 
 Choose between CentOS versions 7 and 8.
+
+You can download an RPM file with the specific version, or pull the whole catalog of versions as a Yum repo.
+
+If you already downloaded the packages manually, move on to [Install](#install).
 
 ### CentOS 7
 
 {% navtabs %}
 {% navtab Download RPM file %}
 
-To download the RPM file for CentOS 7, use the following command:
+Download the RPM file for CentOS 7:
 
 ```bash
 ## Kong Gateway
@@ -45,7 +53,7 @@ curl -Lo kong-{{page.kong_versions[page.version-index].ce-version}}.el7.amd64.rp
 {% endnavtab %}
 {% navtab Download Yum repo file %}
 
-To download the Yum repo file for CentOS 7 from the command line, use the following command:
+Download the Yum repo file for CentOS 7:
 
 ```bash
 ## Kong Gateway
@@ -65,7 +73,7 @@ curl $( "{{site.links.download}}/gateway-2.x-centos-7/config.repo") | sudo tee /
 {% navtabs %}
 {% navtab Download RPM file %}
 
-To download the RPM file for CentOS 8, use the following command:
+Download the RPM file for CentOS 8:
 
 ```bash
 ## Kong Gateway
@@ -80,7 +88,7 @@ curl -Lo kong-{{page.kong_versions[page.version-index].ce-version}}.el8.amd64.rp
 {% endnavtab %}
 {% navtab Download Yum repo file %}
 
-To download the Yum repo file for CentOS 8, use the following command:
+Download the Yum repo file for CentOS 8:
 
 ```bash
 ## Kong Gateway
@@ -104,22 +112,22 @@ Choose between CentOS versions 7 and 8.
 {% navtabs %}
 {% navtab Using RPM file %}
 
-To install the RPM file for CentOS 7 from the command line, use the following command:
+Install the RPM file for CentOS 7:
 
 ```bash
 ## Kong Gateway
-sudo yum install kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.el7.noarch.rpm
+sudo yum install -y kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.el7.noarch.rpm
 ```
 
 ```bash
 ## Kong Gateway (OSS)
-sudo yum install kong-{{page.kong_versions[page.version-index].ce-version}}.el7.amd64.rpm
+sudo yum --nogpgcheck install -y kong-{{page.kong_versions[page.version-index].ce-version}}.el7.amd64.rpm
 ```
 
 {% endnavtab %}
 {% navtab Using Yum repo %}
 
-To install the Yum repo file CentOS from the command line, use the following command:
+Install the Yum repo file for CentOS 7:
 
 ```bash
 ## Kong Gateway
@@ -128,7 +136,7 @@ sudo yum install -y kong-enterprise-edition
 
 ```bash
 ## Kong Gateway (OSS)
-sudo yum install -y kong
+sudo yum --nogpgcheck install -y kong
 ```
 
 {% endnavtab %}
@@ -139,22 +147,22 @@ sudo yum install -y kong
 {% navtabs %}
 {% navtab Using RPM file %}
 
-To install the RPM file for CentOS 8 from the command line, use the following command:
+Install the RPM file for CentOS 8:
 
 ```bash
 ## Kong Gateway
-sudo yum install kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.el8.noarch.rpm
+sudo yum install -y kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}.el8.noarch.rpm
 ```
 
 ```bash
 ## Kong Gateway (OSS)
-sudo yum install kong-{{page.kong_versions[page.version-index].ce-version}}.el8.amd64.rpm
+sudo yum --nogpgcheck install -y kong-{{page.kong_versions[page.version-index].ce-version}}.el8.amd64.rpm
 ```
 
 {% endnavtab %}
 {% navtab Using Yum repo %}
 
-To install the Yum repo file CentOS from the command line, use the following command:
+Install the Yum repo file for CentOS using the following command:
 
 ```bash
 ## Kong Gateway
@@ -162,7 +170,8 @@ sudo yum install -y kong-enterprise-edition
 ```
 
 ```bash
-sudo yum install -y kong
+## Kong Gateway (OSS)
+sudo yum --nogpgcheck install -y kong
 ```
 
 {% endnavtab %}
