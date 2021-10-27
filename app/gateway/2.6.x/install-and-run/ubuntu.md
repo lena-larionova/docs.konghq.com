@@ -2,104 +2,79 @@
 title: Install Kong Gateway on Ubuntu
 ---
 
+<!-- Banner with links to latest downloads -->
+<!-- The install-link and install-listing-link classes are used for tracking, do not remove -->
+
+{:.install-banner}
+> Download the latest {{site.ee_product_name}} {{page.kong_version}} package for Ubuntu:
+> * **Kong Gateway**:
+> [**Xenial**]({{ site.links.download }}/gateway-2.x-ubuntu-xenial/pool/all/k/kong-enterprise-edition/kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb){:.install-link},
+> [**Focal**]({{ site.links.download }}/gateway-2.x-ubuntu-focal/pool/all/k/kong-enterprise-edition/kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb){:.install-link}, or
+> [**Bionic**]({{ site.links.download }}/gateway-2.x-ubuntu-bionic/pool/all/k/kong-enterprise-edition/kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb){:.install-link}
+> (latest version: {{page.kong_versions[page.version-index].ee-version}})
+> * **Kong Gateway (OSS)**:
+> [**Xenial**]({{ site.links.download }}/gateway-2.x-ubuntu-xenial/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-link},
+> [**Focal**]({{ site.links.download }}/gateway-2.x-ubuntu-focal/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-link}, or
+> [**Bionic**]({{ site.links.download }}/gateway-2.x-ubuntu-bionic/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-link}
+>(latest version: {{page.kong_versions[page.version-index].ee-version}})
+>
+> <br>
+> <span class="install-subtitle">View the list of all 2.x packages for
+> [**Xenial**]({{ site.links.download }}/gateway-2.x-ubuntu-xenial/pool/all/k/kong-enterprise-edition/){:.install-listing-link},
+> [**Focal**]({{ site.links.download }}/gateway-2.x-ubuntu-focal/pool/all/k/kong-enterprise-edition/){:.install-listing-link}, or
+> [**Bionic**]({{ site.links.download }}/gateway-2.x-ubuntu-bionic/pool/all/k/kong-enterprise-edition/){:.install-listing-link}
+>  </span>
+
 ## Prerequisites
 
 You have a supported system with root or [root-equivalent](/gateway/{{page.kong_version}}/plan-and-deploy/kong-user) access.
 
 ## Download
 
-### Kong Gateway (Enterprise)
-
-<!-- Banner with links to latest downloads -->
-<!-- The install-link and install-listing-link classes are used for tracking, do not remove -->
-
-{:.install-banner}
-> Download the latest {{site.ee_product_name}} {{page.kong_version}} package for Ubuntu
-> [**Xenial**]({{ site.links.download }}/gateway-2.x-ubuntu-xenial/pool/all/k/kong-enterprise-edition/kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb){:.install-link},
-> [**Focal**]({{ site.links.download }}/gateway-2.x-ubuntu-focal/pool/all/k/kong-enterprise-edition/kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb){:.install-link}, or
-> [**Bionic**]({{ site.links.download }}/gateway-2.x-ubuntu-bionic/pool/all/k/kong-enterprise-edition/kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb){:.install-link}
->
->(latest {{site.ee_product_name}} {{page.kong_version}} version: {{page.kong_versions[page.version-index].ee-version}})
-> <br><br>
-> <span class="install-subtitle">View the list of all {{site.ee_product_name}} 2.x packages for
-> [**Xenial**]({{ site.links.download }}/gateway-2.x-ubuntu-xenial/pool/all/k/kong-enterprise-edition/){:.install-listing-link},
-> [**Focal**]({{ site.links.download }}/gateway-2.x-ubuntu-focal/pool/all/k/kong-enterprise-edition/){:.install-listing-link}, or
-> [**Bionic**]({{ site.links.download }}/gateway-2.x-ubuntu-bionic/pool/all/k/kong-enterprise-edition/){:.install-listing-link}
->  </span>
+Choose between Xenial, Focal, and Bionic.
 
 {% navtabs %}
 {% navtab Download Debian file for Xenial %}
 
-To download the .deb file for Xenial from the command line, use the following command:
+To download the `.deb` file for Xenial, use the following command:
 
 ```bash
+## Kong Gateway
 curl -Lo kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb"{{ site.links.download }}/gateway-2.x-ubuntu-xenial/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}_all.deb"
 ```
 
-{% endnavtab %}
-{% navtab Download Debian file for Focal %}
-
-To download the .deb file for Focal from the command line, use the following command:
-
 ```bash
-curl -Lo kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb"{{ site.links.download }}/gateway-2.x-ubuntu-focal/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}_all.deb"
-```
-
-{% endnavtab %}
-{% navtab Download Debian file for Bionic %}
-
-To download the .deb file for Bionic from the command line, use the following command:
-
-```bash
-curl -Lo kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb"{{ site.links.download }}/gateway-2.x-ubuntu-bionic/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}_all.deb"
-```
-
-{% endnavtab %}
-{% endnavtabs %}
-
-### Kong Gateway
-
-<!-- Banner with links to latest downloads -->
-<!-- The install-link and install-listing-link classes are used for tracking, do not remove -->
-
-{:.install-banner}
-> Download the latest {{site.ce_product_name}} {{page.kong_version}} package for Ubuntu
-> [**Xenial**]({{ site.links.download }}/gateway-2.x-ubuntu-xenial/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-link},
-> [**Focal**]({{ site.links.download }}/gateway-2.x-ubuntu-focal/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-link}, or
-> [**Bionic**]({{ site.links.download }}/gateway-2.x-ubuntu-bionic/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-link}
->
->(latest {{site.ce_product_name}} {{page.kong_version}} version: {{page.kong_versions[page.version-index].ce-version}})
-> <br><br>
-> <span class="install-subtitle">View the list of all {{site.ee_product_name}} 2.x packages for
-> [**Xenial**]({{ site.links.download }}/gateway-2.x-ubuntu-xenial/pool/all/k/kong-enterprise-edition/){:.install-listing-link},
-> [**Focal**]({{ site.links.download }}/gateway-2.x-ubuntu-focal/pool/all/k/kong-enterprise-edition/){:.install-listing-link}, or
-> [**Bionic**]({{ site.links.download }}/gateway-2.x-ubuntu-bionic/pool/all/k/kong-enterprise-edition/){:.install-listing-link}
->  </span>
-
-{% navtabs %}
-{% navtab Download Debian file for Xenial %}
-
-To download the .deb file for Xenial from the command line, use the following commands:
-
-```bash
+## Kong Gateway (OSS)
 curl -Lo kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb "{{ site.links.download }}/gateway-2.x-ubuntu-xenial/Packages/k/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb"
 ```
 
 {% endnavtab %}
 {% navtab Download Debian file for Focal %}
 
-To download the .deb file for Focal from the command line, use the following commands:
+To download the `.deb` file for Focal, use the following command:
 
 ```bash
+## Kong Gateway
+curl -Lo kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb"{{ site.links.download }}/gateway-2.x-ubuntu-focal/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}_all.deb"
+```
+
+```bash
+## Kong Gateway (OSS)
 curl -Lo kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb "{{ site.links.download }}/gateway-2.x-ubuntu-focal/Packages/k/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb"
 ```
 
 {% endnavtab %}
 {% navtab Download Debian file for Bionic %}
 
-To download the .deb file for Focal from the command line, use the following commands:
+To download the `.deb` file for Bionic, use the following command:
 
 ```bash
+## Kong Gateway
+curl -Lo kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb"{{ site.links.download }}/gateway-2.x-ubuntu-bionic/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}_all.deb"
+```
+
+```bash
+## Kong Gateway (OSS)
 curl -Lo kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb "{{ site.links.download }}/gateway-2.x-ubuntu-bionic/Packages/k/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb"
 ```
 
@@ -108,19 +83,15 @@ curl -Lo kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb "{
 
 ## Install
 
-### Kong Gateway (Enterprise)
-
-To install the .deb file for Ubuntu from the command line, use the following command:
+To install the `.deb` file for Ubuntu, use the following command:
 
 ```bash
+## Kong Gateway
 sudo apt-get install -fy ./kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb
 ```
 
-### Kong Gateway
-
-To install the Debian file for Ubuntu from the command line, use the following command:
-
 ```bash
+## Kong Gateway (OSS)
 sudo apt-get install -fy ./kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb
 ```
 
