@@ -31,7 +31,9 @@ You have a supported system with root or [root-equivalent](/gateway/{{page.kong_
 
 ## Download
 
-Choose between Xenial, Focal, and Bionic.
+Choose between Debian and apt repo for Xenial, Focal, and Bionic.
+
+### Debian
 
 {% navtabs %}
 {% navtab Download Debian file for Xenial %}
@@ -81,7 +83,44 @@ curl -Lo kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb "{
 {% endnavtab %}
 {% endnavtabs %}
 
+### Apt repo
+
+{% navtabs %}
+{% navtab Download the apt repo for Xenial %}
+
+To download the apt repo for Xenial, use the following command:
+
+```bash
+echo "deb [trusted=yes] download.konghq.com/gateway-2.x-ubuntu-xenial default all" | tee /etc/apt/sources.list.d/kong.list
+```
+
+{% endnavtab %}
+{% navtab Download the apt repo for Focal %}
+
+To download the apt repo for Focal, use the following command:
+
+```bash
+echo "deb [trusted=yes] download.konghq.com/gateway-2.x-ubuntu-focal default all" | tee /etc/apt/sources.list.d/kong.list
+```
+
+{% endnavtab %}
+{% navtab Download the apt repo for Bionic %}
+
+To download the apt repo for Bionic, use the following command:
+
+```bash
+echo "deb [trusted=yes] download.konghq.com/gateway-2.x-ubuntu-bionic default all" | tee /etc/apt/sources.list.d/kong.list
+```
+
+{% endnavtab %}
+{% endnavtabs %}
+
 ## Install
+
+Choose between installing using Debian file or apt repo.
+
+{% navtabs %}
+{% navtab Install using Debian file %}
 
 To install the `.deb` file for Ubuntu, use the following command:
 
@@ -94,6 +133,23 @@ sudo apt-get install -fy ./kong-enterprise-edition_{{page.kong_versions[page.ver
 ## Kong Gateway (OSS)
 sudo apt-get install -fy ./kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb
 ```
+
+{% endnavtab %}
+{% navtab Install using the apt repo %}
+
+To install using the apt repo for Ubuntu, use the following command:
+
+```bash
+## Kong Gateway
+apt-get install -y kong-enterprise-edition
+```
+
+```bash
+## Kong Gateway (OSS)
+apt-get install -y kong
+```
+{% endnavtab %}
+{% endnavtabs %}
 
 <!-- Setup content shared between all Linux installation topics: Amazon Linux, CentOS, Ubuntu, and RHEL.
 Includes the following sections: Setup configs, Using a database, Using a yaml declarative config file,
