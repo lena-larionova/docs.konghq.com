@@ -31,33 +31,33 @@ You have a supported system with root or [root-equivalent](/gateway/{{page.kong_
 
 ## Download
 
-Choose between Debian and apt repo for Xenial, Focal, and Bionic.
+Download either a `.deb` package or the whole {{site.base_gateway}} APT repo for Xenial, Focal, or Bionic.
 
-### Debian
+### Packages
 
 {% navtabs %}
-{% navtab Download Debian file for Xenial %}
+{% navtab Xenial %}
 
-To download the `.deb` file for Xenial, use the following command:
+Download the `.deb` file for Xenial:
 
 ```bash
 ## Kong Gateway
-curl -Lo kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb"{{ site.links.download }}/gateway-2.x-ubuntu-xenial/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}_all.deb"
+curl -Lo kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb "{{ site.links.download }}/gateway-2.x-ubuntu-xenial/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}_all.deb"
 ```
 
 ```bash
 ## Kong Gateway (OSS)
-curl -Lo kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb "{{ site.links.download }}/gateway-2.x-ubuntu-xenial/Packages/k/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb"
+curl -Lo kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb  "{{ site.links.download }}/gateway-2.x-ubuntu-xenial/Packages/k/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb"
 ```
 
 {% endnavtab %}
-{% navtab Download Debian file for Focal %}
+{% navtab Focal %}
 
-To download the `.deb` file for Focal, use the following command:
+Download the `.deb` file for Focal:
 
 ```bash
 ## Kong Gateway
-curl -Lo kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb"{{ site.links.download }}/gateway-2.x-ubuntu-focal/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}_all.deb"
+curl -Lo kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb "{{ site.links.download }}/gateway-2.x-ubuntu-focal/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}_all.deb"
 ```
 
 ```bash
@@ -66,13 +66,13 @@ curl -Lo kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb "{
 ```
 
 {% endnavtab %}
-{% navtab Download Debian file for Bionic %}
+{% navtab Bionic %}
 
-To download the `.deb` file for Bionic, use the following command:
+Download the `.deb` file for Ubuntu Bionic:
 
 ```bash
 ## Kong Gateway
-curl -Lo kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb"{{ site.links.download }}/gateway-2.x-ubuntu-bionic/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}_all.deb"
+curl -Lo kong-enterprise-edition_{{page.kong_versions[page.version-index].ee-version}}_all.deb "{{ site.links.download }}/gateway-2.x-ubuntu-bionic/Packages/k/kong-enterprise-edition-{{page.kong_versions[page.version-index].ee-version}}_all.deb"
 ```
 
 ```bash
@@ -83,30 +83,30 @@ curl -Lo kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb "{
 {% endnavtab %}
 {% endnavtabs %}
 
-### Apt repo
+### Apt repository
 
 {% navtabs %}
-{% navtab Download the apt repo for Xenial %}
+{% navtab Xenial %}
 
-To download the apt repo for Xenial, use the following command:
+Download the APT repo for Xenial:
 
 ```bash
 echo "deb [trusted=yes] download.konghq.com/gateway-2.x-ubuntu-xenial default all" | tee /etc/apt/sources.list.d/kong.list
 ```
 
 {% endnavtab %}
-{% navtab Download the apt repo for Focal %}
+{% navtab Focal %}
 
-To download the apt repo for Focal, use the following command:
+Download the APT repo for Focal:
 
 ```bash
 echo "deb [trusted=yes] download.konghq.com/gateway-2.x-ubuntu-focal default all" | tee /etc/apt/sources.list.d/kong.list
 ```
 
 {% endnavtab %}
-{% navtab Download the apt repo for Bionic %}
+{% navtab Bionic %}
 
-To download the apt repo for Bionic, use the following command:
+Download the APT repo for Bionic:
 
 ```bash
 echo "deb [trusted=yes] download.konghq.com/gateway-2.x-ubuntu-bionic default all" | tee /etc/apt/sources.list.d/kong.list
@@ -117,12 +117,12 @@ echo "deb [trusted=yes] download.konghq.com/gateway-2.x-ubuntu-bionic default al
 
 ## Install
 
-Choose between installing using Debian file or apt repo.
+Install {{site.base_gateway}} using a `.deb` package or the APT repo.
 
 {% navtabs %}
-{% navtab Install using Debian file %}
+{% navtab Package %}
 
-To install the `.deb` file for Ubuntu, use the following command:
+Install {{site.base_gateway}} using the `.deb` package:
 
 ```bash
 ## Kong Gateway
@@ -135,9 +135,9 @@ sudo apt-get install -fy ./kong_{{page.kong_versions[page.version-index].ce-vers
 ```
 
 {% endnavtab %}
-{% navtab Install using the apt repo %}
+{% navtab APT repo %}
 
-To install using the apt repo for Ubuntu, use the following command:
+Install {{site.base_gateway}} using the APT repo for Ubuntu:
 
 ```bash
 ## Kong Gateway

@@ -37,7 +37,7 @@ If you already downloaded the packages manually, move on to [Install](#install).
 ### RHEL 7
 
 {% navtabs %}
-{% navtab Download RPM file %}
+{% navtab RPM file %}
 
 To download the RPM file for RHEL 7, use the following command:
 
@@ -52,7 +52,7 @@ curl -Lo kong-{{page.kong_versions[page.version-index].ce-version}}.rhel7.amd64.
 ```
 
 {% endnavtab %}
-{% navtab Download Yum repo file %}
+{% navtab Yum repo %}
 
 To download the Yum repo file for RHEL 7, use the following command:
 
@@ -72,7 +72,7 @@ curl $( "{{site.links.download}}/gateway-2.x-rhel-7/config.repo") | sudo tee /et
 ### RHEL 8
 
 {% navtabs %}
-{% navtab Download RPM file %}
+{% navtab RPM file %}
 
 To download the RPM file for RHEL 8, use the following command:
 
@@ -87,7 +87,7 @@ curl -Lo kong-{{page.kong_versions[page.version-index].ce-version}}.rhel8.amd64.
 ```
 
 {% endnavtab %}
-{% navtab Download Yum repo file %}
+{% navtab Yum repo %}
 
 To download the Yum repo file for RHEL 8 from the command line, use the following command:
 
@@ -111,7 +111,7 @@ Choose between RHEL versions 7 and 8.
 ### RHEL 7
 
 {% navtabs %}
-{% navtab Using RPM file %}
+{% navtab RPM file %}
 
 To install the RPM file for RHEL 7, use the following command:
 
@@ -126,7 +126,7 @@ sudo yum --nogpgcheck install -y kong-{{page.kong_versions[page.version-index].c
 ```
 
 {% endnavtab %}
-{% navtab Using Yum repo %}
+{% navtab Yum repo %}
 
 To install the Yum repo file for RHEL from the command line, use the following command:
 
@@ -146,7 +146,7 @@ sudo yum --nogpgcheck install -y kong
 ### RHEL 8
 
 {% navtabs %}
-{% navtab Using RPM file %}
+{% navtab RPM file %}
 
 To install the RPM file for RHEL 8 from the command line, use the following command:
 
@@ -161,7 +161,7 @@ sudo yum --nogpgcheck install -y kong-{{page.kong_versions[page.version-index].c
 ```
 
 {% endnavtab %}
-{% navtab Using Yum repo %}
+{% navtab Yum repo %}
 
 To install the Yum repo file for RHEL, use the following command:
 

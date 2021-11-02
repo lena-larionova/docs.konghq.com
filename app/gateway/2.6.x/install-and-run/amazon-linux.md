@@ -26,7 +26,7 @@ You can download an RPM file with the specific version, or pull the whole catalo
 If you already downloaded the packages manually, move on to [Install](#install).
 
 {% navtabs %}
-{% navtab Download RPM file %}
+{% navtab RPM file %}
 
 To download the RPM file, choose your Kong Gateway
 package type and use the following command:
@@ -42,7 +42,7 @@ curl -Lo kong-{{page.kong_versions[page.version-index].ce-version}}.aws.amd64.rp
 ```
 
 {% endnavtab %}
-{% navtab Download Yum repo file %}
+{% navtab Yum repo %}
 
 To download the Yum repo file, choose your Kong Gateway
 package type and use the following command:
@@ -63,7 +63,7 @@ curl {{site.links.download}}/gateway-2.x-amazonlinux-2/config.repo | sudo tee /e
 ## Install
 
 {% navtabs %}
-{% navtab Using RPM file %}
+{% navtab RPM file %}
 
 To install the RPM file, choose your Kong Gateway package
 type and use the following command:
@@ -79,7 +79,7 @@ sudo yum --nogpgcheck install -y kong-{{page.kong_versions[page.version-index].c
 ```
 
 {% endnavtab %}
-{% navtab Using Yum repo %}
+{% navtab Yum repo %}
 
 To install the Yum repo file, choose your Kong Gateway
 package type and use the following command:

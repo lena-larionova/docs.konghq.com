@@ -36,7 +36,7 @@ If you already downloaded the packages manually, move on to [Install](#install).
 ### CentOS 7
 
 {% navtabs %}
-{% navtab Download RPM file %}
+{% navtab RPM file %}
 
 Download the RPM file for CentOS 7:
 
@@ -51,7 +51,7 @@ curl -Lo kong-{{page.kong_versions[page.version-index].ce-version}}.el7.amd64.rp
 ```
 
 {% endnavtab %}
-{% navtab Download Yum repo file %}
+{% navtab Yum repo %}
 
 Download the Yum repo file for CentOS 7:
 
@@ -71,7 +71,7 @@ curl $( "{{site.links.download}}/gateway-2.x-centos-7/config.repo") | sudo tee /
 ### CentOS 8
 
 {% navtabs %}
-{% navtab Download RPM file %}
+{% navtab RPM file %}
 
 Download the RPM file for CentOS 8:
 
@@ -86,7 +86,7 @@ curl -Lo kong-{{page.kong_versions[page.version-index].ce-version}}.el8.amd64.rp
 ```
 
 {% endnavtab %}
-{% navtab Download Yum repo file %}
+{% navtab Yum repo %}
 
 Download the Yum repo file for CentOS 8:
 
@@ -110,7 +110,7 @@ Choose between CentOS versions 7 and 8.
 ### CentOS 7
 
 {% navtabs %}
-{% navtab Using RPM file %}
+{% navtab RPM file %}
 
 Install the RPM file for CentOS 7:
 
@@ -125,7 +125,7 @@ sudo yum --nogpgcheck install -y kong-{{page.kong_versions[page.version-index].c
 ```
 
 {% endnavtab %}
-{% navtab Using Yum repo %}
+{% navtab Yum repo %}
 
 Install the Yum repo file for CentOS 7:
 
@@ -145,7 +145,7 @@ sudo yum --nogpgcheck install -y kong
 ### CentOS 8
 
 {% navtabs %}
-{% navtab Using RPM file %}
+{% navtab RPM file %}
 
 Install the RPM file for CentOS 8:
 
@@ -160,7 +160,7 @@ sudo yum --nogpgcheck install -y kong-{{page.kong_versions[page.version-index].c
 ```
 
 {% endnavtab %}
-{% navtab Using Yum repo %}
+{% navtab Yum repo %}
 
 Install the Yum repo file for CentOS using the following command:
 
