@@ -21,46 +21,39 @@
         </span>
         <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu dropdown-menu-right" id="module-list" role="menu" aria-labelledby="module-dropdown">
-        <div class="dropdown-submenu-title">Kong Konnect Platform</div>
-        <li {% if include.edition == 'konnect_platform' %} class="active" {% endif %}>
-          <a href="/konnect-platform/" class="{% if include.edition == 'konnect_platform' %}active{% endif %}">{{site.konnect_product_name}} Platform</a>
+      <ul class="dropdown-menu dropdown-menu-right" id="module-list" role="menu" aria-labelledby="module-dropdown" >
+
+        <li role="menuitem" tabindex="-1" {% if include.edition == 'gateway' or include.edition == 'gateway-oss' or include.edition == 'enterprise' %} class="active" {% endif %}>
+          <a href="/gateway/" class="{% if include.edition == 'gateway' %}active{% endif %}">Kong Gateway</a>
         </li>
-        <li {% if include.edition == 'konnect' %} class="active" {% endif %}>
+        <li role="menuitem" tabindex="-1" {% if include.edition == 'konnect' %} class="active" {% endif %}>
           <a href="/konnect/" class="{% if include.edition == 'konnect' %}active{% endif %}">Konnect Cloud</a>
         </li>
-        <li {% if include.edition == 'enterprise' %} class="active" {% endif %}>
-          <a href="/enterprise/" class="{% if include.edition == 'enterprise' %}active{% endif %}">Kong Gateway (Enterprise)</a>
-        </li>
-        <li {% if include.edition == 'mesh' %} class="active" {% endif %}>
+        <li role="menuitem" tabindex="-1" {% if include.edition == 'mesh' %} class="active" {% endif %}>
           <a href="/mesh/" class="{% if include.edition == 'mesh' %}active{% endif %}">Kong Mesh</a>
         </li>
-        <li>
-          <a href="/hub/">Plugin Hub</a>
-        </li>
-        <div class="dropdown-submenu-title">Open Source</div>
-        <li {% if include.edition == 'gateway-oss' %} class="active" {% endif %}>
-          <a href="/gateway-oss/" class="{% if include.edition == 'gateway-oss' %}active{% endif %}">Kong Gateway (OSS)</a>
-        </li>
-        <li {% if include.edition == 'deck' %} class="active" {% endif %}>
-          <a href="/deck/" class="{% if include.edition == 'deck' %}active{% endif %}">decK</a>
-        </li>
-        <li {% if include.edition == 'kubernetes-ingress-controller' %} class="active" {% endif %}>
-          <a href="/kubernetes-ingress-controller/" class="{% if include.edition == 'kubernetes-ingress-controller' %}active{% endif %}">Kubernetes Ingress Controller</a>
+        <li role="menuitem" tabindex="-1">
+          <a href="https://kuma.io/docs/" target="_blank">Kuma</a>
         </li>
         <li>
           <a href="https://support.insomnia.rest/" target="_blank">Insomnia</a>
         </li>
-        <li>
-          <a href="https://kuma.io/docs/" target="_blank">Kuma</a>
+        <li role="menuitem" tabindex="-1" {% if include.edition == 'deck' %} class="active" {% endif %}>
+          <a href="/deck/" class="{% if include.edition == 'deck' %}active{% endif %}">decK</a>
         </li>
-        <div class="dropdown-submenu-title">Contribute to the docs</div>
-        <li {% if include.edition == 'contributing' %} class="active" {% endif %}>
-          <a href="/contributing/" class="{% if include.edition == 'contributing' %}active{% endif %}">Contribution guidelines</a>
+        <li role="menuitem" tabindex="-1" {% if include.edition == 'kubernetes-ingress-controller' %} class="active" {% endif %}>
+          <a href="/kubernetes-ingress-controller/" class="{% if include.edition == 'kubernetes-ingress-controller' %}active{% endif %}">Kubernetes Ingress Controller</a>
         </li>
-        <div class="dropdown-submenu-title">One Gateway doc (temporary location)</div>
-        <li {% if page.edition == 'gateway' %} class="active" {% endif %}>
-          <a href="/gateway/" class="{% if page.edition == 'gateway' %}active{% endif %}">Kong Gateway</a>
+        <li role="menuitem" tabindex="-1">
+          <a href="/hub/">Plugin Hub</a>
+        </li>
+        <hr>
+        <li role="menuitem" tabindex="-1" {% if include.edition == 'konnect_platform' %} class="active" {% endif %}>
+          <a href="/konnect-platform/" class="{% if include.edition == 'konnect_platform' %}active{% endif %}">Common documentation</a>
+        </li>
+        <hr>
+        <li role="menuitem" tabindex="-1" {% if include.edition == 'contributing' %} class="active" {% endif %}>
+          <a href="/contributing/" class="{% if include.edition == 'contributing' %}active{% endif %}">Docs contribution guidelines</a>
         </li>
       </ul>
     </div>
@@ -76,7 +69,7 @@
         </span>
         <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown">
+      <ul class="dropdown-menu dropdown-menu-right" id="version-list" role="menu" aria-labelledby="version-dropdown" tabindex="0">
           {% for ver in include.kong_versions reversed %}
           {% assign version_page_url = include.url | replace: include.kong_version, ver.release %}
           {% capture version_page_exists %}{% page_exists {{version_page_url}} %}{% endcapture %}
