@@ -88,6 +88,18 @@
     }
   }
 
+  .dropdown-menu {
+    li {
+      a {
+        &:focus-visible {
+          color: #1155cb;
+          outline: 2px solid #1155cb;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+
   &.no-right-border {
     button {
       border-right-width: 0;
@@ -134,12 +146,6 @@
 
         &:hover, &.active {
           color: #1155cb;
-        }
-
-        &:focus {
-          color: #1155cb;
-          outline: 2px solid #1155cb;
-          border-radius: 3px;
         }
 
         > ul {
