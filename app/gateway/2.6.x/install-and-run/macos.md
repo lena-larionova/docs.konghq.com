@@ -1,10 +1,6 @@
 ---
-id: page-install-method
 title: Install Kong Gateway on macOS
-header_title: macOS Installation
-header_icon: /assets/images/icons/icn-installation.svg
-breadcrumbs:
-  Installation: /install
+badge: oss
 ---
 
 ## Prerequisites
