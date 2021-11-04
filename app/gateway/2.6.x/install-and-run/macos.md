@@ -93,9 +93,7 @@ You have a supported system with root or [root-equivalent](/gateway/{{page.kong_
     kong start [-c /path/to/kong.conf]
     ```
 
-4. **Use Kong**
-
-    Verify that Kong is running:
+4.  Verify that {{site.base_gateway}} is running:
 
     ```bash
     curl -i http://localhost:8001/
