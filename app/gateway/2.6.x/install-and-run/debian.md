@@ -2,7 +2,21 @@
 title: Install Kong Gateway on Debian
 badge: oss
 ---
-
+{:.install-banner}
+> Download the latest {{site.ce_product_name}} {{page.kong_version}} package for Debian:
+> * [8 Jessie]({{ site.links.download }}/gateway-2.x-debian-jessie/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-link}
+> * [9 Stretch]({{ site.links.download }}/gateway-2.x-debian-stretch/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-link}
+> * [10 Buster]({{ site.links.download }}/gateway-2.x-debian-buster/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-link}
+> * [11 Bullseye]({{ site.links.download }}/gateway-2.x-debian-bullseye/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-link}
+> (latest version: {{page.kong_versions[page.version-index].ce-version}})
+>
+> <br>
+> <span class="install-subtitle">View the list of all 2.x packages for
+> [8 Jessie]({{ site.links.download }}/gateway-2.x-debian-jessie/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-listing-link}, 
+> [9 Stretch]({{ site.links.download }}/gateway-2.x-debian-stretch/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-listing-link}, 
+> [10 Buster]({{ site.links.download }}/gateway-2.x-debian-buster/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-listing-link}, or 
+> [11 Bullseye]({{ site.links.download }}/gateway-2.x-debian-bullseye/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb){:.install-listing-link}
+>  </span>
 ## Prerequisites
 
 You have a supported system with root or [root-equivalent](/gateway/{{page.kong_version}}/plan-and-deploy/kong-user) access.
