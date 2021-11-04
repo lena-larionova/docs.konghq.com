@@ -26,7 +26,7 @@ You have a supported system with root or [root-equivalent](/gateway/{{page.kong_
 You can install Gateway by downloading an installation package or using our APT repository.
 
 {% navtabs %}
-{% navtab Install with packages %}
+{% navtab Package %}
 
     {% if include.distribution == "ubuntu" %}
 
