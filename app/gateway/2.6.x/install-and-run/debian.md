@@ -1,10 +1,6 @@
 ---
-id: page-install-method
 title: Install Kong Gateway on Debian
-header_title: Debian Installation
-header_icon: /assets/images/icons/icn-installation.svg
-breadcrumbs:
-  Installation: /install
+badge: oss
 ---
 
 ## Prerequisites
