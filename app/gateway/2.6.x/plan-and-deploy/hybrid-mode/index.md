@@ -7,7 +7,7 @@ Traditionally, Kong has always required a database, which could be either
 Postgres or Cassandra, to store configured entities such as Routes, Services,
 and Plugins.
 
-Starting with {{site.ee_product_name}} 2.1, Kong can be deployed in
+Starting with {{site.base_gateway}} 2.1, Kong can be deployed in
 Hybrid mode, also known as Control Plane / Data Plane Separation (CP/DP).
 
 In this mode, Kong nodes in a cluster are split into two roles: Control Plane
@@ -49,8 +49,8 @@ control and monitor the status of the entire Kong cluster.
 
 ## Platform Compatibility
 
-You can run {{site.ee_product_name}} in Hybrid mode on any platform where
-{{site.ee_product_name}} is [supported](/enterprise/{{page.kong_version}}/deployment/installation/overview).
+You can run {{site.base_gateway}} in Hybrid mode on any platform where
+{{site.base_gateway}} is [supported](/enterprise/{{page.kong_version}}/deployment/installation/overview).
 
 ### Kubernetes Support and Additional Documentation
 [Kong Enterprise on Kubernetes](/enterprise/{{page.kong_version}}/deployment/installation/kong-on-kubernetes)
@@ -65,38 +65,38 @@ in the `kong/charts` repository.
 same major version.
 Control planes won't allow connections from data planes with newer minor versions.
 
-For example, a {{site.ee_product_name}} v2.5.2 control plane:
+For example, a {{site.base_gateway}} v2.5.2 control plane:
 
-- Accepts a {{site.ee_product_name}} 2.5.0, 2.5.1 and 2.5.2 data plane.
-- Accepts a {{site.ee_product_name}} 2.3.8, 2.2.1 and 2.2.0 data plane.
-- Accepts a {{site.ee_product_name}} 2.5.3 data plane (newer patch version on the data plane is accepted).
-- Rejects a {{site.ee_product_name}} 1.0.0 data plane (major version differs).
-- Rejects a {{site.ee_product_name}} 2.6.0 data plane (minor version on data plane is newer).
+- Accepts a {{site.base_gateway}} 2.5.0, 2.5.1 and 2.5.2 data plane.
+- Accepts a {{site.base_gateway}} 2.3.8, 2.2.1 and 2.2.0 data plane.
+- Accepts a {{site.base_gateway}} 2.5.3 data plane (newer patch version on the data plane is accepted).
+- Rejects a {{site.base_gateway}} 1.0.0 data plane (major version differs).
+- Rejects a {{site.base_gateway}} 2.6.0 data plane (minor version on data plane is newer).
 
-Furthermore, for every plugin that is configured on the {{site.ee_product_name}}
+Furthermore, for every plugin that is configured on the {{site.base_gateway}}
 control plane, new configs are only pushed to data planes that have those configured
 plugins installed and loaded. The major version of those configured plugins must
 be the same on both the control planes and data planes. Also, the minor versions
 of the plugins on the data planes can not be newer than versions installed on the
-control planes. Similar to {{site.ee_product_name}} version checks,
+control planes. Similar to {{site.base_gateway}} version checks,
 plugin patch versions are also ignored when determining compatibility.
 
 {:.important}
 > Configured plugins means any plugin that is either enabled globally or
 configured by services, routes, or consumers.
 
-For example, if a {{site.ee_product_name}} control plane has `plugin1` v1.1.1
+For example, if a {{site.base_gateway}} control plane has `plugin1` v1.1.1
 and `plugin2` v2.1.0 installed, and `plugin1` is configured by a `Route` object:
 
-- It accepts {{site.ee_product_name}} data planes with `plugin1` v1.1.2,
+- It accepts {{site.base_gateway}} data planes with `plugin1` v1.1.2,
 `plugin2` not installed.
-- It accepts {{site.ee_product_name}} data planes with `plugin1` v1.1.2,
+- It accepts {{site.base_gateway}} data planes with `plugin1` v1.1.2,
 `plugin2` v2.1.0, and  `plugin3` v9.8.1 installed.
-- It accepts {{site.ee_product_name}} data planes with `plugin1` v1.1.1
+- It accepts {{site.base_gateway}} data planes with `plugin1` v1.1.1
 and `plugin3` v9.8.1 installed.
-- It rejects {{site.ee_product_name}} data planes with `plugin1` v1.2.0,
+- It rejects {{site.base_gateway}} data planes with `plugin1` v1.2.0,
 `plugin2` v2.1.0 installed (minor version of plugin on data plane is newer).
-- It rejects {{site.ee_product_name}} data planes with `plugin1` not installed
+- It rejects {{site.base_gateway}} data planes with `plugin1` not installed
 (plugin configured on control plane but not installed on data plane).
 
 Version compatibility checks between the control plane and data plane
