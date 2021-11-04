@@ -87,7 +87,7 @@ You have a supported system with root or [root-equivalent](/gateway/{{page.kong_
     declarative_config = /path/to/kong.yml
     ```
 
-3. **Start Kong**
+3. Start {{site.base_gateway}}:
 
     ```bash
     kong start [-c /path/to/kong.conf]
