@@ -7,10 +7,6 @@ badge: oss
 
 You have a supported system with root or [root-equivalent](/gateway/{{page.kong_version}}/plan-and-deploy/kong-user) access.
 
-## Packages
-
-- [Homebrew Formula]({{ site.repos.homebrew }})
-
 1. **Install Kong**
 
     Use the [Homebrew](https://brew.sh/) package manager to add Kong as a tap and install it:
