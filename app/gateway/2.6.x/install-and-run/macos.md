@@ -14,7 +14,9 @@ badge: oss
 
 You have a supported system with root or [root-equivalent](/gateway/{{page.kong_version}}/plan-and-deploy/kong-user) access.
 
-1. **Install Kong**
+## Download and install
+
+1. Install {{site.base_gateway}}:
 
     Use the [Homebrew](https://brew.sh/) package manager to add Kong as a tap and install it:
 
