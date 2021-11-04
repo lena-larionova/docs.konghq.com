@@ -25,7 +25,7 @@ You have a supported system with root or [root-equivalent](/gateway/{{page.kong_
     brew install kong
     ```
 
-2. **Prepare your database or declarative configuration file**
+2. Prepare your database or declarative configuration file:
 
     Kong can run either with or without a database.
 
