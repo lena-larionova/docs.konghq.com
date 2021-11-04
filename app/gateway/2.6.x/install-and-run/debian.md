@@ -45,15 +45,17 @@ You can install Gateway by downloading an installation package or using our APT 
 
     {% endif %}
 
-Install Debian from the command line.
+Install {{site.base_gateway}} on Debian from the command line.
 
-```bash
-curl -Lo kong.{{site.data.kong_latest.version}}.amd64.deb "{{ site.links.download }}/gateway-2.x-{{ include.distribution }}-$(lsb_release -cs)/pool/all/k/kong/kong_{{site.data.kong_latest.version}}_amd64.deb"
-```
+1. Download the {{site.base_gateway}} package:
+    ```bash
+    curl -Lo kong.{{page.kong_versions[page.version-index].ce-version}}.amd64.deb "{{ site.links.download }}/gateway-2.x-debian-$(lsb_release -cs)/pool/all/k/kong/kong_{{page.kong_versions[page.version-index].ce-version}}_amd64.deb"
+     ```
 
-```bash
-sudo dpkg -i kong.{{site.data.kong_latest.version}}.amd64.deb
-```
+2. Install the package:
+    ```bash
+    sudo dpkg -i kong.{{site.data.kong_latest.version}}.amd64.deb
+    ```
 
 {% endnavtab %}
 {% navtab Install with apt repository %}
