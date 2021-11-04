@@ -62,11 +62,19 @@ Install {{site.base_gateway}} on Debian from the command line.
 
 Install the APT repository from the command line.
 
-```bash
-echo "deb [trusted=yes] {{ site.links.download }}/gateway-2.x-{{ include.distribution }}-$(lsb_release -sc)/ default all" | sudo tee /etc/apt/sources.list.d/kong.list 
-sudo apt-get update
-sudo apt install -y kong
-```
+1. Download the {{site.ce_product_name}} APT repository:
+    ```bash
+    echo "deb [trusted=yes] {{ site.links.download }}/gateway-2.x-debian-$(lsb_release -sc)/ 
+    default all" | sudo tee /etc/apt/sources.list.d/kong.list 
+    ```
+2. Update the repository:
+    ```bash
+    sudo apt-get update
+    ```
+3. Install {{site.ce_product_name}}:
+    ```bash
+    apt install -y kong
+    ```
 
 {% endnavtab %}
 {% endnavtabs %}
