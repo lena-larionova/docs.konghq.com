@@ -2,7 +2,14 @@
 title: Install Kong Gateway on macOS
 badge: oss
 ---
+<!-- Banner with links to latest downloads -->
+<!-- The install-link and install-listing-link classes are used for tracking, do not remove -->
 
+{:.install-banner}
+> See the MacOS
+> [**Homebrew formula**]({{ site.repos.homebrew }}){:.install-listing-link}
+>
+> (latest {{site.base_gateway}} version: {{site.data.kong_latest_ce.version}})
 ## Prerequisites
 
 You have a supported system with root or [root-equivalent](/gateway/{{page.kong_version}}/plan-and-deploy/kong-user) access.
