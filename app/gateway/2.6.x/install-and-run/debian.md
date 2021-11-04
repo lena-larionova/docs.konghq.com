@@ -58,7 +58,7 @@ Install {{site.base_gateway}} on Debian from the command line.
     ```
 
 {% endnavtab %}
-{% navtab Install with apt repository %}
+{% navtab APT repository %}
 
 Install the `apt` repository from the command line.
 
