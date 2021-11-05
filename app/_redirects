@@ -77,8 +77,6 @@
 /konnect/dev-portal/administrators/customization/themes         /konnect/dev-portal
 
 # Community doc rebranding
-/latest/*                                   /gateway-oss/latest/:splat
-/latest                                     /
 /community                                  https://konghq.com/community-resources/
 /2.5.x/*                                    /gateway-oss/2.5.x/:splat
 /2.4.x/*                                    /gateway-oss/2.4.x/:splat
@@ -105,7 +103,6 @@
 /0.4.x/*                                    /gateway-oss/0.4.x/:splat
 /0.3.x/*                                    /gateway-oss/0.3.x/:splat
 /0.2.x/*                                    /gateway-oss/0.2.x/:splat
-/admin-api/                                 /gateway-oss/latest/admin-api
 
 # Studio
 /enterprise/2.3.x/studio                    https://support.insomnia.rest/
@@ -128,6 +125,81 @@
 /konnect/dev-portal/developers/dev-reg                     /konnect/dev-portal/access-and-approval/dev-reg
 /konnect/dev-portal/administrators/manage-devs             /konnect/dev-portal/access-and-approval/manage-devs
 /konnect/dev-portal/administrators/auto-approve-devs-apps  /konnect/dev-portal/access-and-approval/auto-approve-devs-apps
+
+# General redirects to /gateway/
+/2.6.x/*                                    /gateway/2.6.x/:splat
+/latest/*                                   /gateway/latest/:splat
+/latest                                     /
+/admin-api/                                 /gateway/latest/admin-api
+
+/enterprise/*/developer-portal/networking  /gateway/latest/property-reference/#dev-portal
+/enterprise/*/developer-portal/FAQ  /gateway/latest/developer-portal
+/enterprise/*/developer-portal/introduction/  /gateway/latest/developer-portal
+/*/getting-started/enabling-plugins  /gateway/latest/get-started/quickstart/enabling-plugins
+/*/admin-api/                        /gateway/latest/admin-api
+/*/api-admin-gui/                    /gateway/latest/admin-api
+/enterprise/*/admin-gui/             /gateway/latest/admin-api
+/enterprise/*/kong-implementation-checklist/    /gateway/latest/plan-and-deploy
+/enterprise/0.34-x/deployment-guide/enterprise/0.34-x/developer-portal/configuration/networking/            /gateway/latest/property-reference/#developer-portal-section
+/enterprise/0.34-x/deployment-guide/enterprise/0.34-x/kong-manager/configuration/networking/           /gateway/latest/property-reference/#kong-manager-section
+/enterprise/*/getting-started/adding-your-api/  /gateway/latest/get-started/quickstart/configuring-a-service
+/enterprise/0.33-xinstallation/docker  /gateway/latest/install-and-run/docker
+/enterprise/*/plugins/rbac-api/        /gateway/latest/configure/auth/rbac
+/*/admin-api/                          /gateway/latest/admin-api
+/*/admin-api/*                         /gateway/latest/admin-api/:splat
+/enterprise/latest/admin-api/          /gateway/latest/admin-api/
+/enterprise/latest/admin-api/*         /gateway/latest/admin-api/:splat
+/gateway-oss/latest/admin-api/         /gateway/latest/admin-api/
+/gateway-oss/latest/admin-api/*        /gateway/latest/admin-api/:splat
+/enterprise/*/developer-portal/configuration/property-reference   /gateway/latest/property-reference/#dev-portal
+/enterprise/*/configuration/developer-portal/smtp /gateway/2.6.x/developer-portal/configuration/smtp
+/enterprise/*/developer-portal/smtp  /gateway/2.6.x/developer-portal/configuration/
+/enterprise/*/developer-portal/file-management /gateway/latest/developer-portal/files-api
+/enterprise/0.34-x/getting-started/enabling-plugins/enterprise/0.34-x/plugins/key-authentication  /hub/kong-inc/key-auth
+/enterprise/0.34-x/getting-started/enabling-plugins/enterprise/0.34-x/plugins  /gateway/latest/get-started/quickstart/enabling-plugins
+/enterprise/*/organization-management/managing-admins  /gateway/latest/configuration/auth/rbac/add-admin
+/enterprise/*/kong-manager/organization-management/rbac-in-workspaces /gateway/latest/configuration/auth/rbac
+/enterprise/*/plugins/rbac-api/  /gateway/latest/configuration/auth/rbac
+/enterprise/*/kong-manager/organization-management/rbac-in-workspaces/  /gateway/latest/configuration/auth/rbac
+/enterprise/*/organization-management/rbac-and-perms/ /gateway/latest/configuration/auth/rbac
+/enterprise/0.35-x/admin-api/rbac/rbac  /gateway/latest/admin-api/rbac/reference
+/enterprise/0.35-x/deployment/installation/  /gateway/latest/install-and-run
+/admin-api/workspaces   /gateway/latest/admin-api/workspaces/reference
+/developer-portal/configuration/enable-the-dev-portal  /gateway/latest/developer-portal/enable-dev-portal
+/enterprise/1.5.x/getting-started/enable-dev-portal  /gateway/latest/developer-portal/enable-dev-portal
+/enterprise/latest/getting-started/enable-dev-portal /gateway/latest/developer-portal/enable-dev-portal
+/enterprise/getting-started/*/key-concepts  /konnect-platform/key-concepts
+/enterprise/1.5.x/getting-started/add-consumer  /gateway/latest/get-started/quickstart/adding-consumers
+/enterprise/latest/getting-started/add-consumer /gateway/latest/get-started/quickstart/adding-consumers
+/enterprise/1.5.x/getting-started/add-service  /gateway/latest/get-started/quickstart/configuring-a-service
+/enterprise/latest/getting-started/add-service  /gateway/latest/get-started/quickstart/configuring-a-service
+/enterprise/1.5.x/getting-started/add-admin  /gateway/latest/get-started/comprehensive/manage-teams
+/enterprise/latest/getting-started/add-admin  /gateway/latest/get-started/comprehensive/manage-teams
+/enterprise/1.5.x/getting-started/add-role   /gateway/latest/get-started/comprehensive/manage-teams
+/enterprise/latest/getting-started/add-role  /gateway/latest/get-started/comprehensive/manage-teams
+/enterprise/1.5.x/getting-started/add-workspace  /gateway/latest/configuration/auth/rbac
+/enterprise/latest/getting-started/add-workspace  /gateway/latest/configuration/auth/rbac
+/enterprise/1.5.x/getting-started/enable-plugin  /gateway/latest/get-started/quickstart/enabling-plugins
+/enterprise/1.5.x/getting-started/start-kong  /gateway/latest/plan-and-deploy/security/start-kong-securely
+/enteprise/2.1.x/kong-for-kubernetes/install  /gateway/latest/install-and-run/kubernetes
+/enteprise/2.1.x/kong-for-kubernetes/install-on-kubernetes  /gateway/latest/install-and-run/kubernetes
+/enterprise/2.1.x/kong-for-kubernetes/  /gateway/latest/install-and-run/kubernetes
+/enterprise/2.1.x/kong-for-kubernetes/deployment-options  /gateway/latest/install-and-run/kubernetes
+/enterprise/2.1.x/admin-api/vitals/vitals-influx-strategy /gateway/latest/vitals/vitals-influx-strategy
+/enterprise/2.1.x/admin-api/vitals/vitals-prometheus-strategy /gateway/latest/vitals/vitals-prometheus-strategy
+/enterprise/2.2.x/brain-immunity   /gateway/latest/immunity/
+/enterprise/latest/brain-immunity  /gateway/latest/immunity/
+/enterprise/2.2.x/brain-immunity/*  /gateway/latest/immunity/:splat
+/enterprise/latest/brain-immunity/*  /gateway/latest/immunity/:splat
+/enterprise/2.2.x/brain-immunity/service-map  /gateway/latest/immunity/
+/enterprise/latest/brain-immunity/service-map  /gateway/latest/immunity/
+/enterprise/2.2.x/brain-immunity/auto-generated-specs  /gateway/latest/immunity/
+/enterprise/latest/brain-immunity/auto-generated-specs  /gateway/latest/immunity/
+/enterprise/latest/go  /gateway/latest/reference/external-plugins
+/enterprise/2.3.x/go   /gateway/latest/reference/external-plugins
+
+/enterprise/2.6.x/*       /gateway/
+/gateway-oss/2.6.x/*      /gateway/
 
 # About
 /about/faq                 https://konghq.com/faqs/
