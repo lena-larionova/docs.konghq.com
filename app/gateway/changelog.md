@@ -1989,7 +1989,7 @@ features, fixes, known issues, and workarounds. The changelog for 2.2.0.0 versio
 </div>
 
 ### Features
-**Note: Feature updates for Kong Enterprise 2.2.0.0 version include [2.2.0.0 (beta)](/enterprise/changelog/#beta-features-2200) features.**
+**Note: Feature updates for Kong Enterprise 2.2.0.0 version include [2.2.0.0 (beta)](/gateway/changelog/#beta-features-2200) features.**
 
 #### **Kong Manager**
 - No new features.
@@ -2010,7 +2010,7 @@ features, fixes, known issues, and workarounds. The changelog for 2.2.0.0 versio
   to the upstream gRPC service.
 
 ### Fixes
-**Note: Fixes for Kong Enterprise 2.2.0.0 version include [2.2.0.0 (beta)](/enterprise/changelog/#beta-fixes-2200) fixes.**
+**Note: Fixes for Kong Enterprise 2.2.0.0 version include [2.2.0.0 (beta)](/gateway/changelog/#beta-fixes-2200) fixes.**
 
 #### **OpenID Connect Library**
   - Changed to disable HS-signature verification by default.
@@ -2507,11 +2507,11 @@ specs.
 ## 2.1.3.0
 **Release Date** 2020/08/25
 
-Kong Enterprise 2.1.3.0 version includes 2.1.0.0 (beta) features, fixes, known issues, and workarounds. See the [2.1.0.0 (beta)](/enterprise/changelog/#2100-beta/) changelog for more details.
+Kong Enterprise 2.1.3.0 version includes 2.1.0.0 (beta) features, fixes, known issues, and workarounds. See the [2.1.0.0 (beta)](/gateway/changelog/#2100-beta/) changelog for more details.
 
 ### Features
 
-**Note: Feature updates for Kong Enterprise 2.1.3.0 version includes [2.1.0.0 (beta)](/enterprise/changelog/#features) features.**
+**Note: Feature updates for Kong Enterprise 2.1.3.0 version includes [2.1.0.0 (beta)](/gateway/changelog/#features) features.**
 
 #### Kong Gateway
 * Inherited changes from OSS Kong in releases 2.0.x, 2.1.0, 2.1.1, 2.1.2, and 2.1.3.
@@ -2557,7 +2557,7 @@ Kong Enterprise 2.1.3.0 version includes 2.1.0.0 (beta) features, fixes, known i
 
 ### Fixes
 
-**Note: Fixes for Kong Enterprise 2.1.3.0 version includes the [2.1.0.0 (beta)](/enterprise/changelog/#fixes) fixes.**
+**Note: Fixes for Kong Enterprise 2.1.3.0 version includes the [2.1.0.0 (beta)](/gateway/changelog/#fixes) fixes.**
 
 #### Kong Manager
 * Auto-generated role `workspace-portal-admin` does not display link to Dev Portal Editor.
@@ -2620,7 +2620,7 @@ Kong Enterprise 2.1.3.0 version includes 2.1.0.0 (beta) features, fixes, known i
 
 ### Known Issues and Workarounds
 
-**Note: Known issues and workarounds for Kong Enterprise includes [2.1.0.0 (beta)](/enterprise/changelog/#known-issues-and-workarounds) known issues and workarounds.**
+**Note: Known issues and workarounds for Kong Enterprise includes [2.1.0.0 (beta)](/gateway/changelog/#known-issues-and-workarounds) known issues and workarounds.**
 
 * The LDAP Authentication and LDAP Authentication Advanced plugins require a workaround to support CLI access with RBAC tokens: [Using Service Directory Mapping on the CLI](/enterprise/2.1.x/kong-manager/authentication/ldap/#using-service-directory-mapping-on-the-cli).
 
