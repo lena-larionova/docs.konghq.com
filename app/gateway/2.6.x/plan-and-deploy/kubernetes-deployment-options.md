@@ -2,12 +2,11 @@
 title: Kubernetes Deployment Options
 ---
 
-Kong for Kubernetes consists of a controller, which translates Kubernetes
-resources into Kong configuration, and a proxy, which uses that configuration
-to route and control traffic.
+The {{site.kic_product_name}} translates Kubernetes resources into 
+{{site.base_gateway}} configuration. {{site.base_gateway}} uses that 
+configuration to route and control traffic.
 
-As of 2.1.x, Kong for Kubernetes with Kong Enterprise
-(the [kong-gateway][enterprise-download] proxy image) supports DB-less
+The [kong-gateway][enterprise-download] proxy image supports DB-less
 operation and is recommended for all deployments.
 * [DB-less installation with the Kong Ingress Controller][k4k8s-enterprise-install]
 * [Database-backed installation with or without the Kong Ingress Controller][k4k8s-with-enterprise-install]
@@ -18,11 +17,12 @@ Existing users of the `kong-enterprise-k8s` image who want to use 2.1.x or later
 should switch to the `kong-gateway` image.
 
 If you encounter issues after switching images, please
-[contact Kong Enterprise Support][support].
+[contact Enterprise Support][support].
 
 ## DB-less versus database-backed deployments
 
-When using Kong for Kubernetes, the source of truth for Kong's configuration is
+When using {{site.base_gateway}} with {{site.kic_product_name}}, the source 
+of truth for Kong's configuration is
 the Kubernetes configuration in etcd: Kong's custom Kubernetes resources,
 ingresses, and services provide the information necessary for the ingress
 controller to configure Kong. This differs from Kong deployments that do not
@@ -36,16 +36,17 @@ restarts. Because etcd provides this functionality in Kong for Kubernetes
 deployments, it is not necessary to run an additional database, reducing
 maintenance and infrastructure requirements.
 
-While Kong for Kubernetes does not require a database, it is fully compatible
+While running {{site.base_gateway}} with {{site.kic_product_name}}
+does not require a database, it is fully compatible
 with PostgreSQL and requires it for some features. etcd still remains the
-source of truth in database-backed deployments: the controller translate
+source of truth in database-backed deployments: the controller translates
 Kubernetes resources from etcd into Kong configuration and inserts them into
 the database via the Admin API.
 
 ## Choosing between DB-less or database-backed deployments
 
 In general, DB-less deployments are simpler to maintain and require less
-resources to run, and as such are the preferred option for Kong for Kubernetes.
+resources to run.
 These deployments must set `KONG_DATABASE=off` in their environment variables.
 
 Database-backed deployments offer a wider range of features. Review the
@@ -54,7 +55,7 @@ available in DB-less deployments.
 
 ### Feature availability
 
-Some Kong Enterprise features are not available in DB-less deployments.
+Some Enterprise features are not available in DB-less deployments.
 Use a database-backed deployment if you want to use:
 
 * Dev Portal
@@ -62,14 +63,14 @@ Use a database-backed deployment if you want to use:
 * Teams (RBAC)
 * Workspaces
 
-In 2.1.x and later, the following features have support in DB-less mode, but
+The following features have support in DB-less mode, but
 work differently than in DB-backed modes:
 
 * Kong Manager (read-only)
 * Vitals (using [Prometheus][vitals-prometheus] or [InfluxDB][vitals-influxdb]
   strategies)
 
-Because Kong for Kubernetes is configured by the ingress controller, some
+When {{site.base_gateway}} is configured by the ingress controller, some
 functionality in these features is different from traditional deployments:
 
 * Instead of using Kong Manager, proxy configuration is managed by the
