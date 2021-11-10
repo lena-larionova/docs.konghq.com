@@ -33,7 +33,7 @@ into the request lifecycle, all with a few lines of code.
 
 **Kong Gateway (OSS)**: an open-source package containing the basic API gateway
 functionality and open-source plugins. You can manage the open-source Gateway
-with Kong's Admin API or with declarative configuration.
+with Kong's [Admin API](#kong-admin-api) or with [declarative configuration](#deck).
 
 **Kong Gateway** (available in
 [Free or Enterprise modes](https://konghq.com/pricing)): Kong's API gateway
@@ -49,7 +49,7 @@ with added functionality.
     * [Enterprise plugins](/hub/)
 
 You can manage {{site.base_gateway}} in Free or Enterprise mode with Kong's
-Admin API, declarative configuration, or Kong Manager.
+[Admin API](#kong-admin-api), [declarative configuration](#deck), or [Kong Manager](#kong-manager).
 
 This package is also available as part of
 [{{site.konnect_product_name}}](/konnect/).
