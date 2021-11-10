@@ -3,7 +3,7 @@ title: Install on Kubernetes with Helm
 badge: enterprise
 ---
 
-This page explains how to install {{site.base_gateway}} with {{site.kic_product_name}} with a database. To install in DB-less mode, see the documentation on installing with a flat Kubernetes manifest.
+This page explains how to install {{site.base_gateway}} with {{site.kic_product_name}} with a database. To install in DB-less mode, see the documentation on installing with a [flat Kubernetes manifest](/gateway/{{page.kong_version}}/install-and-run/kubernetes).
 
 ## Prerequisites
 
@@ -55,7 +55,7 @@ If you plan to use RBAC, you must create the superuser account at this step in i
     ```sh
     kubectl create secret generic kong-enterprise-superuser-password \
     n kong \
-    --from-literal=password=<your-password>
+    --from-literal=password={YOUR_PASSWORD}
     ```
 
 ## Create secret for Session plugin
@@ -95,7 +95,7 @@ Note that this deployment includes a Postgres sub-chart provided by Bitnami. You
 
     This might take some time.
 
-1.  Check pod status, and make sure the `my-kong-kong-<ID>` pod is running:
+1.  Check pod status, and make sure the `my-kong-kong-{ID}` pod is running:
 
     ```bash
     kubectl get pods -n kong
@@ -114,7 +114,7 @@ Note that this deployment includes a Postgres sub-chart provided by Bitnami. You
 1.  Copy the IP address from the output, then add the following to the `.env` section of your `values.yaml` file:
 
     ```yaml
-    admin_api_uri: <your-DNS-or-IP>
+    admin_api_uri: {YOUR-DNS-OR-IP}
     ```
 
     {:.Note}
