@@ -43,10 +43,10 @@ with added functionality.
 * With an **Enterprise** subscription (<span class="badge enterprise"></span>),
   it also includes:
     * [Dev Portal](#kong-dev-portal)
-    * [Vitals]()
-    * Immunity
-    * RBAC
-    * Enterprise plugins
+    * [Vitals](#kong-vitals)
+    * [Immunity](#kong-immunity)
+    * [RBAC](/gateway/{{page.kong_version}}/admin-api/rbac/reference)
+    * [Enterprise plugins](/hub/)
 
 You can manage {{site.base_gateway}} in Free or Enterprise mode with Kong's
 Admin API, declarative configuration, or Kong Manager.
