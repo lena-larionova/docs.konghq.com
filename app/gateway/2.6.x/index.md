@@ -4,20 +4,24 @@ subtitle: API gateway built for hybrid and multi-cloud, optimized for microservi
 ---
 
 {{site.base_gateway}} is a lightweight, fast, and flexible cloud-native API
-gateway. The Gateway runs in front of any RESTful API and can be extended through
-modules and plugins which provide extra functionality beyond the core platform.
+gateway. An API gateway is a reverse proxy that lets you manage, configure, and route
+requests to your APIs.
 
-{{site.base_gateway}} is designed to run on decentralized architectures,
-leveraging workflow automation and modern GitOps practices, and running in
-hybrid-cloud and multi-cloud deployments. With {{site.base_gateway}}, users can:
+{{site.base_gateway}} runs in front of any RESTful API and can be extended through
+modules and plugins. It's designed to run on decentralized architectures, including 
+hybrid-cloud and multi-cloud deployments.
 
+With {{site.base_gateway}}, users can:
+
+* Leverage workflow automation and modern GitOps practices
 * Decentralize applications/services and transition to microservices
 * Create a thriving API developer ecosystem
 * Proactively identify API-related anomalies and threats
 * Secure and govern APIs/services, and improve API visibility across the
 entire organization
 
-## Modular architecture
+## Extending the Kong Gateway
+
 {{site.base_gateway}} is a Lua application running in Nginx. {{site.base_gateway}}
 is distributed along with [OpenResty](https://openresty.org/), which is a bundle
 of modules that extend the [lua-nginx-module](https://github.com/openresty/lua-nginx-module).
@@ -29,6 +33,7 @@ management. Plugins can live in separate code bases and be injected anywhere
 into the request lifecycle, all with a few lines of code.
 
 ## Packages and modes
+
 {{site.base_gateway}} is available in the following modes:
 
 **Kong Gateway (OSS)**: an open-source package containing the basic API gateway
@@ -97,7 +102,7 @@ object-level health using intuitive, customizable dashboards
 ### Kong Vitals
 {:.badge .enterprise}
 
-[Kong Vitals](/gateway/{{page.kong_version}}/vitals) provides useful metrics about the health and performance of your {{site.base_gateway}} nodes, as well as metrics about the usage of your gateway-proxied APIs. You can visually monitor vital signs and pinpoint anomalies in real-time, and use visual API analytics to see exactly how your APIs and Gateway are performing and access key statistics. Kong Vitals is part of the Kong Manager UI.
+[Kong Vitals](/gateway/{{page.kong_version}}/vitals) provides useful metrics about the health and performance of your {{site.base_gateway}} nodes, as well as metrics about the usage of your proxied APIs. You can visually monitor vital signs and pinpoint anomalies in real-time, and use visual API analytics to see exactly how your APIs and Gateway are performing and access key statistics. Kong Vitals is part of the Kong Manager UI.
 
 ### Kubernetes Ingress Controller
 
