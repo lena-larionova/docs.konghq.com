@@ -4,7 +4,7 @@ subtitle: API gateway built for hybrid and multi-cloud, optimized for microservi
 ---
 
 {{site.base_gateway}} is a lightweight, fast, and flexible cloud-native API
-gateway. The gateway runs in front of any RESTful API and can be extended through
+gateway. The Gateway runs in front of any RESTful API and can be extended through
 modules and plugins which provide extra functionality beyond the core platform.
 
 {{site.base_gateway}} is designed to run on decentralized architectures,
@@ -32,7 +32,7 @@ into the request lifecycle, all with a few lines of code.
 {{site.base_gateway}} is available in the following modes:
 
 **Kong Gateway (OSS)**: an open-source package containing the basic API gateway
-functionality and open-source plugins. You can manage the open-source gateway
+functionality and open-source plugins. You can manage the open-source Gateway
 with Kong's Admin API or with declarative configuration.
 
 **Kong Gateway** (available in
@@ -92,7 +92,7 @@ object-level health using intuitive, customizable dashboards
 ### Kong Immunity
 {:.badge .enterprise}
 
-[Kong Immunity](/gateway/{{page.kong_version}}/immunity) uses machine learning to autonomously identify service behavior anomalies in real-time to improve security, mitigate breaches and isolate issues. Use Kong Immunity to autonomously identify service issues with machine learning-powered anomaly detection.
+[Kong Immunity](/gateway/{{page.kong_version}}/immunity) uses machine learning to autonomously identify service behavior anomalies in real-time to improve security, mitigate breaches, and isolate issues. Use Kong Immunity to autonomously identify service issues with machine learning-powered anomaly detection.
 
 ### Kong Vitals
 {:.badge .enterprise}
