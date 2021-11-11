@@ -2,7 +2,14 @@
 title: Install on Kubernetes with Helm
 ---
 
-This page explains how to install {{site.base_gateway}} with {{site.kic_product_name}} using Helm. The Enterprise deployment includes a Postgres sub-chart provided by Bitnami. The documentation on installing with a [flat Kubernetes manifest](/gateway/{{page.kong_version}}/install-and-run/kubernetes) also explains how to install in DB-less mode for both Enterprise and OSS deployments.
+This page explains how to install {{site.base_gateway}} with {{site.kic_product_name}} using Helm.
+
+* The Enterprise deployment includes a Postgres sub-chart provided by Bitnami. 
+* For open-source deployments, you can choose to use the Postgres sub-chart, or install without a database.
+
+Configuration for both options is flexible and depends on your environment.
+
+The documentation on installing with a [flat Kubernetes manifest](/gateway/{{page.kong_version}}/install-and-run/kubernetes) also explains how to install in DB-less mode for both Enterprise and OSS deployments.
 
 ## Prerequisites
 
@@ -64,26 +71,49 @@ If you plan to use RBAC, you must create a secret for the superuser account pass
 
 If you create an RBAC superuser and plan to work with Kong Manager or Dev Portal, you must also configure the Session plugin and store its config in a Kubernetes secret:
 
-For Kong Manager only:
+1.  Create a session config file for Kong Manager:
 
-```sh
-kubectl create secret generic kong-session-config \
--n kong \
---from-file=admin_gui_session_conf
-```
+    ```bash
+    $ echo '{"cookie_name":"admin_session","cookie_samesite":"off","secret":"<your-password>","cookie_secure":false,"storage":"kong"}' > admin_gui_session_conf
+    ```
 
-For Kong Manager and Dev Portal:
+1.  Create a session config file for Kong Dev Portal:
 
-```sh
-kubectl create secret generic kong-session-config \
--n kong \
---from-file=admin_gui_session_conf \
---from-file=portal_session_conf
-```
+    ```bash
+    $ echo '{"cookie_name":"portal_session","cookie_samesite":"off","secret":"<your-password>","cookie_secure":false,"storage":"kong"}' > portal_session_conf
+    ```
+
+    Or, if you have different subdomains for the `portal_api_url` and `portal_gui_host`, set the `cookie_domain`
+    and `cookie_samesite` properties as follows:
+
+    ```
+    $ echo '{"cookie_name":"portal_session","cookie_samesite":"off","cookie_domain":"<.your_subdomain.com">,"secret":"<your-password>","cookie_secure":false,"storage":"kong"}' > portal_session_conf
+    ```
+
+1.  Create the secret:
+
+    For Kong Manager only:
+
+    ```sh
+    kubectl create secret generic kong-session-config \
+    -n kong \
+    --from-file=admin_gui_session_conf
+    ```
+
+    For Kong Manager and Dev Portal:
+
+    ```sh
+    kubectl create secret generic kong-session-config \
+    -n kong \
+    --from-file=admin_gui_session_conf \
+    --from-file=portal_session_conf
+    ```
 
 ## Create values.yaml file
 
-Create a `values.yaml` file to provide required values such as password secrets or optional email addresses for notifications. You can work from the [Enterprise example file](https://github.com/Kong/charts/blob/main/charts/kong/example-values/full-k4k8s-with-kong-enterprise.yaml). The example file includes comments to explain which values you must set. For OSS deployments, the default install might be sufficient, but you can explore other `values.yaml` files and [the readme in the charts repository](https://github.com/Kong/charts/blob/main/charts/kong/README.md), which includes an exhaustive list of all possible configuration properties.
+Create a `values.yaml` file to provide required values such as password secrets or optional email addresses for notifications. You can work from the [Enterprise example file](https://github.com/Kong/charts/blob/main/charts/kong/example-values/full-k4k8s-with-kong-enterprise.yaml). The example file includes comments to explain which values you must set. 
+
+For OSS deployments, the default install might be sufficient, but you can explore other `values.yaml` files and [the readme in the charts repository](https://github.com/Kong/charts/blob/main/charts/kong/README.md), which includes an exhaustive list of all possible configuration properties.
 
 Note that the Enterprise deployment includes a Postgres sub-chart provided by Bitnami. You might need to delete the PersistentVolume objects for Postgres in your Kubernetes cluster to connect to the database after install.
 
@@ -149,7 +179,7 @@ Note that the Enterprise deployment includes a Postgres sub-chart provided by Bi
     kubectl get svc -n kong
     ```
 
-    The output includes `EXTERNAL-IP` values for Kong Manager and Dev Portal. For example:
+    With an Enterprise deployment, the output includes `EXTERNAL-IP` values for Kong Manager and Dev Portal. For example:
 
     ```sh
     NAME                          TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                            AGE

@@ -55,29 +55,50 @@ If you plan to use RBAC, you must create the superuser account at this step in i
     ```sh
     oc create secret generic kong-enterprise-superuser-password \
     -n kong \
-    --from-literal=password=<your-password>
+    --from-literal=password={your-password}
     ```
 
 ## Create secret for Session plugin
 
 If you create an RBAC superuser and plan to work with Kong Manager or Dev Portal, you must also configure the Session plugin and store its config in a Kubernetes secret:
 
-For Kong Manager only:
+1.  Create a session config file for Kong Manager:
 
-```sh
-oc create secret generic kong-session-config \
--n kong \
---from-file=admin_gui_session_conf
-```
+    ```bash
+    $ echo '{"cookie_name":"admin_session","cookie_samesite":"off","secret":"<your-password>","cookie_secure":false,"storage":"kong"}' > admin_gui_session_conf
+    ```
 
-For Kong Manager and Dev Portal:
+1.  Create a session config file for Kong Dev Portal:
 
-```sh
-oc create secret generic kong-session-config \
--n kong \
---from-file=admin_gui_session_conf \
---from-file=portal_session_conf
-```
+    ```bash
+    $ echo '{"cookie_name":"portal_session","cookie_samesite":"off","secret":"<your-password>","cookie_secure":false,"storage":"kong"}' > portal_session_conf
+    ```
+
+    Or, if you have different subdomains for the `portal_api_url` and `portal_gui_host`, set the `cookie_domain`
+    and `cookie_samesite` properties as follows:
+
+    ```
+    $ echo '{"cookie_name":"portal_session","cookie_samesite":"off","cookie_domain":"<.your_subdomain.com">,"secret":"<your-password>","cookie_secure":false,"storage":"kong"}' > portal_session_conf
+    ```
+
+1.  Create the secret:
+
+    For Kong Manager only:
+
+    ```sh
+    oc create secret generic kong-session-config \
+    -n kong \
+    --from-file=admin_gui_session_conf
+    ```
+
+    For Kong Manager and Dev Portal:
+
+    ```sh
+    oc create secret generic kong-session-config \
+    -n kong \
+    --from-file=admin_gui_session_conf \
+    --from-file=portal_session_conf
+    ```
 
 ## Create values.yaml file
 
