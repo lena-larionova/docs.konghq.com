@@ -286,6 +286,6 @@ If the node is receiving a lot of traffic, purging its cache at the same time
 will trigger many requests to your database, and could cause a
 [dog-pile effect](https://en.wikipedia.org/wiki/Cache_stampede).
 
-[db_update_frequency]: /gateway-oss/{{page.kong_version}}/configuration/#db_update_frequency
-[db_update_propagation]: /gateway-oss/{{page.kong_version}}/configuration/#db_update_propagation
-[db_cache_ttl]: /gateway-oss/{{page.kong_version}}/configuration/#db_cache_ttl
+[db_update_frequency]: /gateway/{{page.kong_version}}/reference/property-reference/#db_update_frequency
+[db_update_propagation]: /gateway/{{page.kong_version}}/reference/property-reference/#db_update_propagation
+[db_cache_ttl]: /gateway/{{page.kong_version}}/reference/property-reference/#db_cache_ttl

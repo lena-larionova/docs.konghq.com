@@ -282,8 +282,8 @@ The steps involved in starting Kong in [DB-less mode] are the following:
     curl -i http://localhost:8001/services
     ```
 
-[DB-less mode]: /gateway-oss/latest/db-less-and-declarative-config/
-[Declarative Configuration Format]: /gateway-oss/latest/db-less-and-declarative-config/#the-declarative-configuration-format
+[DB-less mode]: /gateway/{{page.kong_version}}/reference/db-less-and-declarative-config/
+[Declarative Configuration Format]: /gateway/{{page.kong_version}}/reference/db-less-and-declarative-config/#the-declarative-configuration-format
 [Docker Volume]: https://docs.docker.com/storage/volumes/
 
 ## Troubleshooting
