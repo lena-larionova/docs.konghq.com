@@ -1,9 +1,8 @@
 ---
 title: Install on Kubernetes with Helm
-badge: enterprise
 ---
 
-This page explains how to install {{site.base_gateway}} with {{site.kic_product_name}} with a database. To install in DB-less mode, see the documentation on installing with a [flat Kubernetes manifest](/gateway/{{page.kong_version}}/install-and-run/kubernetes).
+This page explains how to install {{site.base_gateway}} with {{site.kic_product_name}} using Helm. The Enterprise deployment includes a Postgres sub-chart provided by Bitnami. The documentation on installing with a [flat Kubernetes manifest](/gateway/{{page.kong_version}}/install-and-run/kubernetes) also explains how to install in DB-less mode for both Enterprise and OSS deployments.
 
 ## Prerequisites
 
@@ -20,16 +19,6 @@ Create the namespace for {{site.base_gateway}} with {{site.kic_product_name}}. F
 kubectl create namespace kong
 ```
 
-## Create license secret
-
-1.  Save your license file temporarily with the filename `license` (no file extension).
-
-1.  Run:
-
-    ```sh
-    kubectl create secret generic kong-enterprise-license --from-file=./license -n kong
-    ```
-
 ## Set up Helm
 
 1.  Add the Kong charts repository:
@@ -44,9 +33,21 @@ kubectl create namespace kong
     helm repo update
     ```
 
-## Create secret for RBAC superuser (recommended)
+## Create license secret
+{:.badge .enterprise}
 
-If you plan to use RBAC, you must create the superuser account at this step in installation. You cannot create it later.
+1.  Save your license file temporarily with the filename `license` (no file extension).
+
+1.  Run:
+
+    ```sh
+    kubectl create secret generic kong-enterprise-license --from-file=./license -n kong
+    ```
+
+## Create secret for RBAC superuser (recommended)
+{:.badge .enterprise}
+
+If you plan to use RBAC, you must create a secret for the superuser account password at this step in installation. You cannot create it later.
 
 1.  Create the RBAC account.
 
@@ -59,6 +60,7 @@ If you plan to use RBAC, you must create the superuser account at this step in i
     ```
 
 ## Create secret for Session plugin
+{:.badge .enterprise}
 
 If you create an RBAC superuser and plan to work with Kong Manager or Dev Portal, you must also configure the Session plugin and store its config in a Kubernetes secret:
 
@@ -79,19 +81,27 @@ kubectl create secret generic kong-session-config \
 --from-file=portal_session_conf
 ```
 
-## Create `values.yaml` file
+## Create values.yaml file
 
-Create a `values.yaml` file to provide required values such as password secrets or optional email addresses for notifications. Work from the [Enterprise example file](https://github.com/Kong/charts/blob/main/charts/kong/example-values/full-k4k8s-with-kong-enterprise.yaml). The example file includes comments to explain which values you must set. The [readme in the charts repository](https://github.com/Kong/charts/blob/main/charts/kong/README.md) includes an exhaustive list of all possible configuration properties.
+Create a `values.yaml` file to provide required values such as password secrets or optional email addresses for notifications. You can work from the [Enterprise example file](https://github.com/Kong/charts/blob/main/charts/kong/example-values/full-k4k8s-with-kong-enterprise.yaml). The example file includes comments to explain which values you must set. For OSS deployments, the default install might be sufficient, but you can explore other `values.yaml` files and [the readme in the charts repository](https://github.com/Kong/charts/blob/main/charts/kong/README.md), which includes an exhaustive list of all possible configuration properties.
 
-Note that this deployment includes a Postgres sub-chart provided by Bitnami. You might need to delete the PersistentVolume objects for Postgres in your Kubernetes cluster to connect to the database after install.
+Note that the Enterprise deployment includes a Postgres sub-chart provided by Bitnami. You might need to delete the PersistentVolume objects for Postgres in your Kubernetes cluster to connect to the database after install.
 
 ## Deploy {{site.base_gateway}} with {{site.kic_product_name}}
 
 1.  Run:
 
     ```sh
+    ## Kong Gateway
     helm install my-kong kong/kong -n kong --values ./values.yaml
     ```
+
+    ```sh
+    ## Kong Gateway (OSS)
+    helm install kong/kong --generate-name --set ingressController.installCRDs=false
+    ```
+
+    For more information on working with Helm charts for {{site.ce_product_name}}, see the [chart documentation](https://github.com/Kong/charts/blob/main/charts/kong/README.md).
 
     This might take some time.
 
@@ -102,6 +112,7 @@ Note that this deployment includes a Postgres sub-chart provided by Bitnami. You
     ```
 
 ## Finalize configuration and verify installation
+{:.badge .enterprise}
 
 1.  Run:
 
@@ -145,4 +156,7 @@ Note that this deployment includes a Postgres sub-chart provided by Bitnami. You
     my-kong-kong-manager          LoadBalancer   10.96.61.116     10.96.61.116    8002:31308/TCP,8445:32420/TCP      24m
     my-kong-kong-portal           LoadBalancer   10.101.251.123   10.101.251.123  8003:31609/TCP,8446:32002/TCP      24m
     ```
-    
+
+## Next steps
+
+See the [Kong Ingress Controller docs](/kubernetes-ingress-controller/) for  how-to guides, reference guides, and more.

@@ -66,7 +66,7 @@ oc new-project kong
 
     This might take a few minutes.
 
-2.  Check the install status:
+1.  Check the install status:
 
     ```sh
     kubectl get pods -n kong
@@ -78,13 +78,13 @@ oc new-project kong
     oc get pods -n kong
     ```
 
-3.  To make HTTP requests, you need the IP address of the load balancer. Get the LoadBalancer address and store it in a local PROXY_IP environment variable: 
+1.  To make HTTP requests, you need the IP address of the load balancer. Get the LoadBalancer address and store it in a local PROXY_IP environment variable: 
 
     ```sh
     export PROXY_IP=$(kubectl get -o jsonpath="{.status.loadBalancer.ingress[0].ip}" service -n kong kong-proxy)
     ```
 
-4.  Check that the value of $PROXY_IP is the value of the external host:
+1.  Check that the value of $PROXY_IP is the value of the external host:
 
     ```sh
     kubectl get service kong-proxy -n kong
@@ -98,7 +98,13 @@ oc new-project kong
 
     {:.Note}
     > **Note:** Some cluster providers provide only a DNS name for load balancers. In this case, specify `.hostname` instead of `.ip`.
-    
+
+## Next steps
+
+See the [Kong Ingress Controller docs](/kubernetes-ingress-controller/) for  how-to guides, reference guides, and more.
+
+
+
 
 
 
