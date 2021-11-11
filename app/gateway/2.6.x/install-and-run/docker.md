@@ -295,8 +295,8 @@ setup, reach out to your support contact or head over to the
 ## Next Steps
 
 Check out {{site.base_gateway}}'s series of
-[Getting Started](/getting-started-guide/latest/overview) guides to get the most
+[Getting Started](/gateway/{{page.kong_version}}/get-started/comprehensive/) guides to get the most
 out of {{site.base_gateway}}.
 
 If you have an Enterprise subscription, add the license using the
-[`/licenses` Admin API endpoint](/enterprise/{{page.kong_version}}/deployment/licenses/deploy-license).
+[`/licenses` Admin API endpoint](/gateway/{{page.kong_version}}/plan-and-deploy/licenses/deploy-license).

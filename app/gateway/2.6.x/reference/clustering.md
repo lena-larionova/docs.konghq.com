@@ -81,7 +81,7 @@ greatly reduces the load on the main database instance since read-only
 queries are no longer sent to it.
 
 To learn more about how to configure this feature, refer to the
-[Datastore section](/enterprise/{{page.kong_version}}/property-reference/#datastore-section)
+[Datastore section](/gateway/{{page.kong_version}}/reference/property-reference/#datastore-section)
 of the Configuration reference.
 
 ## What is being cached?
