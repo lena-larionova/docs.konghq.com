@@ -17,14 +17,14 @@ To alter the default properties listed in the `kong.conf.default` file and confi
 make a copy of the file, rename it (for example `kong.conf`), make your updates, and save it to the same location.
 
 For more information on how to configure {{site.base_gateway}} to connect to your datastore, see the Datastore section of the
-[Configuration property Reference](/gateway/{{ include.kong_version }}/reference/property-reference/#datastore-section).
+[Configuration property Reference](/gateway/{{ include.kong_version }}/reference/configuration/#datastore-section).
 
 ### Using a database
 
 First, you must configure {{site.base_gateway}} using the `kong.conf` configuration file so it can connect to your database.
 
 For more information on how to configure {{site.base_gateway}} to connect to your database, see the Datastore section of the
-[Configuration property Reference](/gateway/{{ include.kong_version }}/reference/property-reference/#datastore-section).
+[Configuration property Reference](/gateway/{{ include.kong_version }}/reference/configuration/#datastore-section).
 
 {{site.base_gateway}} supports both [PostgreSQL {{site.data.kong_latest.dependencies.postgres}}](http://www.postgresql.org/)
 and [Cassandra {{site.data.kong_latest.dependencies.cassandra}}](http://cassandra.apache.org/) as its datastore.
@@ -179,7 +179,7 @@ your setup, reach out to your Kong Support contact or go to the
 ## Next Steps
 
 Check out {{site.base_gateway}}'s series of
-[Getting Started](/gateway/{{include.kong_version}}/get-started/overview) guides to get the most
+[Getting Started](/gateway/{{include.kong_version}}/get-started/comprehensive) guides to get the most
 out of {{site.base_gateway}}.
 
 If you have an Enterprise subscription, add the license using the
