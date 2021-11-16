@@ -36,7 +36,7 @@ with any of the following network configurations:
 For details on the differences between deployment types, see
 [Kong Deployment Options]()-->
 For the differences between deployment types when running on Kubernetes,
-see [{{site.ee_product_name}} for Kubernetes Deployment Options](/gateway/latest/plan-and-deploy/kubernetes-deployment-options/). -->
+see [{{site.ee_product_name}} for Kubernetes Deployment Options](/gateway/latest/plan-and-deploy/kubernetes-deployment-options/).
 
 ## Plugin tiers and supported network configurations
 <!-- To add or edit table entries in this topic, see /app/_data/tables/plugin_index.yml in this repo -->
