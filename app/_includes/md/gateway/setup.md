@@ -162,7 +162,7 @@ If you have an Enterprise subscription, follow the instructions to
 
     <div class="copy-code-snippet"><pre><code>kong restart -c <div contenteditable="true">{PATH_TO_KONG.CONF_FILE}</div></code></pre></div>
 
-1. To enable the Dev Portal for a workspace. Execute the following command,
+1. To enable the Dev Portal for a workspace, execute the following command,
    updating `DNSorIP` to reflect the IP or valid DNS for the OS system:
 
     <div class="copy-code-snippet"><pre><code>curl -X PATCH http://<div contenteditable="true">{DNS_OR_IP}</div>:8001/workspaces/default \
